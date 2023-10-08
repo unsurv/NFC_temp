@@ -1,4 +1,4 @@
-21321989658486320
+21333836976043294
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -89446,6 +89446,13 @@ unsurv_offline_pcb_footprints
 4
 2
 unsurv_offline_pcb_footprints
+35_18_1_9nH
+
+
+0
+4
+2
+unsurv_offline_pcb_footprints
 AMPM oscillator
 
 
@@ -89454,6 +89461,13 @@ AMPM oscillator
 4
 unsurv_offline_pcb_footprints
 BMA400
+
+
+0
+12
+12
+unsurv_offline_pcb_footprints
+BMA400_regular
 
 
 0
@@ -89579,11 +89593,39 @@ RF430CL330H
 14
 14
 unsurv_offline_pcb_footprints
+RF430_3x3_noBCu
+
+
+0
+0
+0
+unsurv_offline_pcb_footprints
 RF430_3x3mm
 QFN, 16 Pin (http://www.cypress.com/file/46236/download), generated with kicad-footprint-generator ipc_dfn_qfn_generator.py
 QFN DFN_QFN
 0
 27
+17
+unsurv_offline_pcb_footprints
+RF430_3x3mm_noBCu
+QFN, 16 Pin (http://www.cypress.com/file/46236/download), generated with kicad-footprint-generator ipc_dfn_qfn_generator.py
+QFN DFN_QFN
+0
+21
+17
+unsurv_offline_pcb_footprints
+RF430_3x3mm_regular
+QFN, 16 Pin (http://www.cypress.com/file/46236/download), generated with kicad-footprint-generator ipc_dfn_qfn_generator.py
+QFN DFN_QFN
+0
+27
+17
+unsurv_offline_pcb_footprints
+SFW15R-1STE1LF
+
+
+0
+17
 17
 unsurv_offline_pcb_footprints
 TF-SMD_TF-101B
@@ -89613,6 +89655,13 @@ UMH3N
 0
 6
 6
+unsurv_offline_pcb_footprints
+WLCSP4
+
+
+0
+4
+4
 unsurv_offline_pcb_footprints
 WSON-8 2.5 x 2.5 mm
 
