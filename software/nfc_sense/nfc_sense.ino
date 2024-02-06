@@ -19,7 +19,6 @@ void setup()
   TCA0.SPLIT.CTRLA = 0;
   ADCPowerOptions(ADC_DISABLE);
 
-
   pinMode(0, OUTPUT);
   pinMode(1, OUTPUT);
   pinMode(2, OUTPUT);
@@ -38,13 +37,15 @@ void setup()
   pinMode(14, OUTPUT);
   pinMode(15, OUTPUT);
   pinMode(16, OUTPUT);
+  
+  /*
   pinMode(17, OUTPUT);
   pinMode(19, OUTPUT);
   pinMode(20, OUTPUT);
-  
+  */
   
   // temp INPUT
-  pinMode(18, OUTPUT);
+  // pinMode(18, OUTPUT);
   
   
   /*
