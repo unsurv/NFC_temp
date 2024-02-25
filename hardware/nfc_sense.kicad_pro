@@ -387,7 +387,7 @@
       "netlist": "",
       "specctra_dsn": "",
       "step": "nfc_sense.step",
-      "vrml": ""
+      "vrml": "nfc_sense.wrl"
     },
     "page_layout_descr_file": ""
   },
