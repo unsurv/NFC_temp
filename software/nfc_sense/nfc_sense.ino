@@ -96,10 +96,12 @@ void setup()
   tmp117.getEvent(&temp); //fill the empty event object with the current measurements
 
   setupNFC();
-  // updateNFC("Temp Value: " + String(temp.temperature)) ;
-  // updateNFC("Temp Value: ") ;
 
-  updateNFC("Temp Value: " + String(temp.temperature)) ;
+  // Fahrenheit
+  // updateNFC("Temperature: " + String((temp.temperature * 9/5) + 32, 1) + " °F") ;
+  
+  // Celcius
+  updateNFC("Temperature: " + String(temp.temperature, 1) + " °C") ;
 
 
   // Before sleeping
