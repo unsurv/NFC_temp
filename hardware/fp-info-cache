@@ -1,4 +1,4 @@
-21338947254967118
+21342380580582053
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -89600,6 +89600,13 @@ QR GitHub
 0
 0
 unsurv_offline_pcb_footprints
+QR_shop
+
+
+0
+0
+0
+unsurv_offline_pcb_footprints
 RF430CL330H
 
 
@@ -89655,6 +89662,13 @@ TMP117
 0
 6
 6
+unsurv_offline_pcb_footprints
+TMP117 WSON-6-1EP_2x2mm_P0.65mm
+WSON, 6 Pin (http://www.ti.com/lit/ds/symlink/tps61040.pdf#page=35), generated with kicad-footprint-generator ipc_noLead_generator.py
+WSON NoLead
+0
+9
+7
 unsurv_offline_pcb_footprints
 TTGO-Micro32-ESP32
 
