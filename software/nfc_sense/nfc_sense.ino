@@ -91,17 +91,26 @@ void setup()
   
   // Try to initialize!
   tmp117.begin();
+  setupNFC();
+
+  if (!tmp117.begin()) {
+    updateNFC("TMP117 not found. Aborting...");
+  }
+  else
+  {
   
   sensors_event_t temp; // create an empty event to be filled
   tmp117.getEvent(&temp); //fill the empty event object with the current measurements
 
-  setupNFC();
-
+ 
   // Fahrenheit
   // updateNFC("Temperature: " + String((temp.temperature * 9/5) + 32, 1) + " °F") ;
   
   // Celcius
   updateNFC("Temperature: " + String(temp.temperature, 1) + " °C") ;
+  }
+  
+  
 
 
   // Before sleeping

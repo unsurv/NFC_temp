@@ -1,3 +1,4 @@
 (sym_lib_table
+  (version 7)
   (lib (name "unsurv_offline_pcb_symbols")(type "KiCad")(uri "C:/Users/Martin/Documents/GitHub/unsurv-offline/unsurv_offline_pcb/main/unsurv_offline_pcb_symbols.kicad_sym")(options "")(descr ""))
 )
