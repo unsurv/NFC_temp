@@ -11,7 +11,7 @@
     "cuts": {
         "type": "mousebites",
         "drill": "0.2mm",
-        "spacing": "0.4mm"
+        "spacing": "0.35mm"
     },
     "framing": {
         "type": "railstb"
