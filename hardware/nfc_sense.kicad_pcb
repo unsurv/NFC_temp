@@ -2384,7 +2384,7 @@
 		(descr "VQFN, 20 Pin (http://ww1.microchip.com/downloads/en/DeviceDoc/20%20Lead%20VQFN%203x3x0_9mm_1_7EP%20U2B%20C04-21496a.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py")
 		(tags "VQFN NoLead")
 		(property "Reference" "U3"
-			(at -1.5 -2.65 0)
+			(at -1.5 -2.6 0)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "6b044e38-1df6-43ab-bb84-726b168191a1")

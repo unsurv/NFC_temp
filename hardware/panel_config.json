@@ -14,7 +14,9 @@
         "spacing": "0.35mm"
     },
     "framing": {
-        "type": "railstb"
+        "type": "frame",
+        "hspace": "3mm",
+        "vspace": "3mm"
     },
     "tooling": {
         "type": "4hole",
