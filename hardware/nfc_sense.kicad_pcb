@@ -150,26 +150,26 @@
 	(net 5 "SDA")
 	(net 6 "RF430_RST")
 	(net 7 "RF430_INT")
-	(net 8 "unconnected-(U3-Pad5)")
+	(net 8 "Net-(U2-VCORE)")
 	(net 9 "RX")
-	(net 10 "unconnected-(U3-Pad17)")
+	(net 10 "unconnected-(U1-ALERT-Pad3)")
 	(net 11 "UPDI")
-	(net 12 "unconnected-(U3-Pad1)")
-	(net 13 "unconnected-(U3-Pad2)")
-	(net 14 "unconnected-(U3-Pad6)")
-	(net 15 "unconnected-(U3-Pad7)")
-	(net 16 "unconnected-(U3-Pad8)")
-	(net 17 "unconnected-(U3-Pad20)")
+	(net 12 "unconnected-(U2-NC-Pad14)")
+	(net 13 "unconnected-(U2-PAD-Pad17)")
+	(net 14 "unconnected-(U2-NC-Pad16)")
+	(net 15 "unconnected-(U3-PA6-Pad7)")
+	(net 16 "unconnected-(U3-PA2-Pad1)")
+	(net 17 "unconnected-(U3-PC0-Pad15)")
 	(net 18 "TX")
 	(net 19 "ALERT")
-	(net 20 "Net-(C5-Pad1)")
+	(net 20 "unconnected-(U3-PA1-Pad20)")
 	(net 21 "VCC")
-	(net 22 "unconnected-(U2-Pad14)")
-	(net 23 "unconnected-(U2-Pad16)")
-	(net 24 "unconnected-(U2-Pad17)")
-	(net 25 "unconnected-(U3-Pad15)")
-	(net 26 "unconnected-(U3-Pad16)")
-	(net 27 "unconnected-(U1-Pad3)")
+	(net 22 "unconnected-(U3-PA4-Pad5)")
+	(net 23 "unconnected-(U3-PA5-Pad6)")
+	(net 24 "unconnected-(U3-PA3-Pad2)")
+	(net 25 "unconnected-(U3-PA7-Pad8)")
+	(net 26 "unconnected-(U3-PC1-Pad16)")
+	(net 27 "unconnected-(U3-PC2-Pad17)")
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "06f644d6-84dd-4e76-89ea-d1c8242644d8")
@@ -200,7 +200,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -236,7 +236,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/06d0d845-528b-4781-9e5c-fe90e250ba37")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -356,7 +358,7 @@
 			(size 0.9 0.95)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(roundrect_rratio 0.25)
-			(net 20 "Net-(C5-Pad1)")
+			(net 8 "Net-(U2-VCORE)")
 			(pintype "passive")
 			(uuid "89a2b1ef-051c-4299-9877-3b8a700e64f4")
 		)
@@ -411,7 +413,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -447,7 +449,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/3cca1b81-edf2-4dd5-864e-c8a1ba6c7441")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -622,7 +626,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -658,7 +662,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/3bbe225c-7e25-41c7-b1ba-ccb379f9e20d")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -833,7 +839,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -869,7 +875,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/d49966fc-a142-4491-86f8-eb7680378c86")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -1042,7 +1050,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "unsurv_offline_pcb_footprints:35_18_1_9nH"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -1079,6 +1087,7 @@
 			)
 		)
 		(path "/c62370cb-5769-450d-8ea9-f65c15d69aea")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr through_hole)
 		(pad "1" smd custom
@@ -1339,7 +1348,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "unsurv_offline_pcb_footprints:RF430_3x3mm_noBCu"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -1376,6 +1385,7 @@
 			)
 		)
 		(path "/2573d7f5-93df-4b04-86ca-b100ed4156d5")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -1704,7 +1714,7 @@
 			(size 0.8 0.25)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(roundrect_rratio 0.25)
-			(net 20 "Net-(C5-Pad1)")
+			(net 8 "Net-(U2-VCORE)")
 			(pinfunction "VCORE")
 			(pintype "input")
 			(uuid "c1b79022-c0af-427d-a66c-0373db28d5be")
@@ -1724,7 +1734,7 @@
 			(size 0.25 0.8)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(roundrect_rratio 0.25)
-			(net 22 "unconnected-(U2-Pad14)")
+			(net 12 "unconnected-(U2-NC-Pad14)")
 			(pinfunction "NC")
 			(pintype "no_connect")
 			(uuid "17fce99a-ba45-4b4a-9905-5b8afe404d98")
@@ -1744,7 +1754,7 @@
 			(size 0.25 0.8)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(roundrect_rratio 0.25)
-			(net 23 "unconnected-(U2-Pad16)")
+			(net 14 "unconnected-(U2-NC-Pad16)")
 			(pinfunction "NC")
 			(pintype "no_connect")
 			(uuid "bf6f6fdc-197a-4cc6-b32c-feb265c09902")
@@ -1754,7 +1764,7 @@
 			(size 1.7 1.7)
 			(layers "F.Cu" "F.Mask")
 			(roundrect_rratio 0.147059)
-			(net 24 "unconnected-(U2-Pad17)")
+			(net 13 "unconnected-(U2-PAD-Pad17)")
 			(pinfunction "PAD")
 			(pintype "no_connect")
 			(uuid "24eba9b7-c685-4c94-98f8-92ad56571e59")
@@ -1782,7 +1792,7 @@
 			)
 		)
 	)
-	(footprint "unsurv_offline_pcb_footprints:TMP117 WSON-6-1EP_2x2mm_P0.65mm"
+	(footprint "unsurv_offline_pcb_footprints:TMP117 WSON-6-1EP_2x2mm_P0.65mm_no_pad_paste"
 		(layer "F.Cu")
 		(uuid "4d0c6710-dd3d-4a3e-a58c-c66f2dd7fe56")
 		(at 129.5 38.7 -90)
@@ -1790,22 +1800,9 @@
 		(tags "WSON NoLead")
 		(property "Reference" "U1"
 			(at 0 -1.95 -90)
-			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "8cde88a8-739a-4031-be16-2dafecf158d9")
-			(effects
-				(font
-					(size 0.75 0.75)
-					(thickness 0.125)
-				)
-			)
-		)
-		(property "Value" "TMP117AIDRVR"
-			(at 0 1.95 -90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(uuid "31483e2e-032a-46bb-9280-ffac0f40e86a")
+			(uuid "81bac5f0-bff7-494a-be25-c1204eaa4169")
 			(effects
 				(font
 					(size 1 1)
@@ -1813,11 +1810,22 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Value" "TMP117AIDRVR"
+			(at 0 1.95 -90)
+			(layer "F.Fab")
+			(uuid "5260b16f-d4ca-40f3-9257-6e4df0fd8298")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Footprint" "unsurv_offline_pcb_footprints:TMP117 WSON-6-1EP_2x2mm_P0.65mm_no_pad_paste"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3383551e-75ac-4e61-858a-901ca7ebca01")
+			(uuid "917a4405-8eda-495e-93ca-22e9496a19db")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1825,11 +1833,11 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftmp112"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8b506a84-6e26-4a7f-aa38-fd09bff40fba")
+			(uuid "72d102e8-ca08-4671-b67c-19e128a1c07f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1838,10 +1846,10 @@
 			)
 		)
 		(property "Description" "SENSOR DIGITAL -40C-125C SOT563"
-			(at 90.8 168.2 0)
+			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d887fb0f-1ef4-4cd0-b5fb-0b020e6d15d8")
+			(uuid "cd2c39b9-6d71-468f-a1cb-f8b2940751cd")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1849,47 +1857,38 @@
 				)
 			)
 		)
-		(property "Category" "Sensors, Transducers"
-			(at 90.8 168.2 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "93f7624c-f6e2-422a-8809-cdcc1049bd25")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DK_Datasheet_Link" "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftmp112"
-			(at 90.8 168.2 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "9f026426-3645-4ad6-a579-1df91fc7816f")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "DK_Detail_Page" "/product-detail/en/texas-instruments/TMP112AIDRLT/296-24621-1-ND/2090130"
-			(at 90.8 168.2 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "623963ef-17d8-4245-87c5-4b169cab1e31")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(property "Digi-Key_PN" "296-24621-1-ND"
-			(at 90.8 168.2 0)
+			(at 0 0 -90)
+			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1e5e5eaa-6b82-45c7-9764-35666cc5c783")
+			(uuid "00364824-e61d-4737-bbaa-d556b9fb75b8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "TMP117AIDRVR"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f07463a4-c87d-4fae-a16c-9e0a97c98a9e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Category" "Sensors, Transducers"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cbc6ae83-6fff-47ef-abb5-978b1dfef95b")
 			(effects
 				(font
 					(size 1 1)
@@ -1898,10 +1897,11 @@
 			)
 		)
 		(property "Family" "Temperature Sensors - Analog and Digital Output"
-			(at 90.8 168.2 0)
+			(at 0 0 -90)
+			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2815bd02-115b-4616-acd0-f0eef010d506")
+			(uuid "7e8a0b9c-3a60-47f2-9456-506f646f705f")
 			(effects
 				(font
 					(size 1 1)
@@ -1909,11 +1909,25 @@
 				)
 			)
 		)
-		(property "MPN" "TMP112AIDRLT"
-			(at 90.8 168.2 0)
+		(property "DK_Datasheet_Link" "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftmp112"
+			(at 0 0 -90)
+			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "14416090-64eb-4227-b82e-c196ed6325ee")
+			(uuid "f8776002-a12d-4979-9aa4-609586aadb3c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "DK_Detail_Page" "/product-detail/en/texas-instruments/TMP112AIDRLT/296-24621-1-ND/2090130"
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6f8187d7-ef72-42f4-b9b1-e1bac6bc2400")
 			(effects
 				(font
 					(size 1 1)
@@ -1922,10 +1936,11 @@
 			)
 		)
 		(property "Manufacturer" "Texas Instruments"
-			(at 90.8 168.2 0)
+			(at 0 0 -90)
+			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "10f01a2a-76a6-44e9-8c22-24bd759de732")
+			(uuid "a343cbed-f87f-41f7-97ec-1a5f2fcc6f93")
 			(effects
 				(font
 					(size 1 1)
@@ -1934,10 +1949,11 @@
 			)
 		)
 		(property "Status" "Active"
-			(at 90.8 168.2 0)
+			(at 0 0 -90)
+			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2d5217ea-fbef-48e8-9ff9-090ab62eb651")
+			(uuid "492845ab-79eb-4b56-9853-4d13e60d8466")
 			(effects
 				(font
 					(size 1 1)
@@ -1946,27 +1962,28 @@
 			)
 		)
 		(path "/66c5039d-30d6-403e-9b61-a8f7c5bee423")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -1 1.11)
 			(end 1 1.11)
 			(stroke
-				(width 0.1)
+				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "028b122d-7d49-4da8-b74f-534f38083278")
+			(uuid "fdec9ae3-d469-4d12-99ff-2cad3702e34e")
 		)
 		(fp_line
 			(start 0 -1.11)
 			(end 1 -1.11)
 			(stroke
-				(width 0.1)
+				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "402dcd65-e680-4e31-8688-eaf438d2fa13")
+			(uuid "58e13dea-796d-448d-adf8-fa6b57678424")
 		)
 		(fp_line
 			(start -1.32 1.25)
@@ -1976,7 +1993,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "b3bd331c-6b7e-4b17-8ede-f092933dce4b")
+			(uuid "7326692d-e0b4-495e-abee-4385b3548b19")
 		)
 		(fp_line
 			(start 1.32 1.25)
@@ -1986,7 +2003,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "59ce6010-7615-4e42-8636-0710490799ac")
+			(uuid "4f278ded-928a-4ead-9206-3e8fc6028337")
 		)
 		(fp_line
 			(start -1.32 -1.25)
@@ -1996,7 +2013,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "f5f9a300-828b-49ec-951a-78b3d14b4f56")
+			(uuid "075452b4-5f62-4666-ab5e-893141418074")
 		)
 		(fp_line
 			(start 1.32 -1.25)
@@ -2006,7 +2023,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "57dc8dad-6fbb-450f-839b-0de18ce9cfb8")
+			(uuid "95fbb5f9-a213-4759-93e4-303cab0c01ee")
 		)
 		(fp_line
 			(start -1 1)
@@ -2016,7 +2033,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "00604d7d-d25a-455d-a2e2-50bd453f2f4f")
+			(uuid "942f17f4-0f4e-41a1-927d-df5d80b380b1")
 		)
 		(fp_line
 			(start 1 1)
@@ -2026,7 +2043,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "b382364a-f652-443b-9ec9-4fd569bc4ec3")
+			(uuid "9c7518cf-8423-43b8-815d-a4dc614c1350")
 		)
 		(fp_line
 			(start -1 -0.5)
@@ -2036,7 +2053,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "eaf2b64c-1c9c-448c-b74e-9d1140a116ff")
+			(uuid "7e423ed2-221c-4742-b9fb-c08e3c7662fa")
 		)
 		(fp_line
 			(start -0.5 -1)
@@ -2046,7 +2063,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "937a0ab6-d49f-44bf-8393-d9563f04c097")
+			(uuid "7e111f4e-8224-4ba7-a1bd-c0f34076085b")
 		)
 		(fp_line
 			(start 1 -1)
@@ -2056,33 +2073,18 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "ce2135c5-6a08-4548-8d5d-7a1cbd24042b")
+			(uuid "144debf9-b2ab-445d-b473-a9738fb2ba20")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 -90)
-			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "2b75ee5f-23c4-475a-a90f-d6b819dd64d3")
+			(uuid "acaafa4b-937a-4759-be1c-8d75335cfe9c")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.5 0.5)
+					(thickness 0.08)
 				)
 			)
-		)
-		(pad "" smd roundrect
-			(at 0 -0.4 270)
-			(size 0.87 0.69)
-			(layers "F.Paste")
-			(roundrect_rratio 0.25)
-			(uuid "28758f5b-2cb4-4d9c-abb2-d9e152053c54")
-		)
-		(pad "" smd roundrect
-			(at 0 0.4 270)
-			(size 0.87 0.69)
-			(layers "F.Paste")
-			(roundrect_rratio 0.25)
-			(uuid "6fa493a1-3d2f-4486-b8c0-c7aed926c70c")
 		)
 		(pad "1" smd roundrect
 			(at -0.8875 -0.65 270)
@@ -2092,7 +2094,7 @@
 			(net 4 "SCL")
 			(pinfunction "SCL")
 			(pintype "input")
-			(uuid "55b25a61-de3a-45b5-a03c-52691183021d")
+			(uuid "cf0c6891-1c0f-465b-b857-ae08d615ac6f")
 		)
 		(pad "2" smd roundrect
 			(at -0.8875 0 270)
@@ -2102,17 +2104,17 @@
 			(net 1 "GND")
 			(pinfunction "GND")
 			(pintype "power_in")
-			(uuid "d37be41b-4faf-4caa-a7dd-0deb6096a336")
+			(uuid "c9df37ce-f72b-401d-8934-4eb73a628222")
 		)
 		(pad "3" smd roundrect
 			(at -0.8875 0.65 270)
 			(size 0.375 0.4)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(roundrect_rratio 0.25)
-			(net 27 "unconnected-(U1-Pad3)")
+			(net 10 "unconnected-(U1-ALERT-Pad3)")
 			(pinfunction "ALERT")
 			(pintype "output")
-			(uuid "796bcba7-89de-4741-8bf5-235a8d4c2bef")
+			(uuid "b8f9affd-78bc-489e-98d8-ed9fae34b3fa")
 		)
 		(pad "4" smd roundrect
 			(at 0.8875 0.65 270)
@@ -2122,7 +2124,7 @@
 			(net 1 "GND")
 			(pinfunction "ADD0")
 			(pintype "power_in")
-			(uuid "fcf84eea-cfa2-469f-aad9-5880701cb37f")
+			(uuid "3f1da9c8-80c3-462a-8c28-73597d2da722")
 		)
 		(pad "5" smd roundrect
 			(at 0.8875 0 270)
@@ -2132,7 +2134,7 @@
 			(net 21 "VCC")
 			(pinfunction "V+")
 			(pintype "power_in")
-			(uuid "02ab716d-5bd6-4190-9693-d7939c878609")
+			(uuid "bf3ca4b1-1d28-4666-a275-bca9b77868b4")
 		)
 		(pad "6" smd roundrect
 			(at 0.8875 -0.65 270)
@@ -2142,13 +2144,13 @@
 			(net 5 "SDA")
 			(pinfunction "SDA")
 			(pintype "bidirectional")
-			(uuid "f345448e-d74c-4fa7-aa9d-f50a88e08912")
+			(uuid "5903ffee-f623-4967-b59c-82ecfcd47ea7")
 		)
 		(pad "7" smd rect
 			(at 0 0 270)
 			(size 1 1.6)
 			(layers "F.Cu" "F.Mask")
-			(uuid "0501c0d6-f7fe-4a6b-a488-37c6114d7e77")
+			(uuid "8a0bdc96-8a9f-4940-b6f7-1555b0d3acf7")
 		)
 		(model "${KICAD6_3DMODEL_DIR}/Package_SON.3dshapes/WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm.wrl"
 			(offset
@@ -2192,7 +2194,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -2228,7 +2230,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/dd49231d-c829-45bb-aa59-e259aca61903")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -2415,7 +2419,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/ATtiny1624-26-27-DataSheet-DS40002234A.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -2439,7 +2443,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "VQFN*1EP*3x3mm*P0.4mm*")
 		(path "/aaac5da0-ce33-4a7a-968f-de5d85bd48f8")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -2668,7 +2674,7 @@
 			(at -1.45 -0.8)
 			(size 0.143431 0.143431)
 			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 12 "unconnected-(U3-Pad1)")
+			(net 16 "unconnected-(U3-PA2-Pad1)")
 			(pinfunction "PA2")
 			(pintype "bidirectional")
 			(options
@@ -2691,7 +2697,7 @@
 			(size 0.8 0.2)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(roundrect_rratio 0.25)
-			(net 13 "unconnected-(U3-Pad2)")
+			(net 24 "unconnected-(U3-PA3-Pad2)")
 			(pinfunction "PA3")
 			(pintype "bidirectional")
 			(uuid "7f972fd8-2bc1-412d-971c-5adc73757b88")
@@ -2720,7 +2726,7 @@
 			(at -1.45 0.8)
 			(size 0.143431 0.143431)
 			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 8 "unconnected-(U3-Pad5)")
+			(net 22 "unconnected-(U3-PA4-Pad5)")
 			(pinfunction "PA4")
 			(pintype "bidirectional")
 			(options
@@ -2742,7 +2748,7 @@
 			(at -0.8 1.45)
 			(size 0.143431 0.143431)
 			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 14 "unconnected-(U3-Pad6)")
+			(net 23 "unconnected-(U3-PA5-Pad6)")
 			(pinfunction "PA5")
 			(pintype "bidirectional")
 			(options
@@ -2765,7 +2771,7 @@
 			(size 0.2 0.8)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(roundrect_rratio 0.25)
-			(net 15 "unconnected-(U3-Pad7)")
+			(net 15 "unconnected-(U3-PA6-Pad7)")
 			(pinfunction "PA6")
 			(pintype "bidirectional")
 			(uuid "24e9ac3c-2e87-4566-bc1d-3fabc3d26b11")
@@ -2775,7 +2781,7 @@
 			(size 0.2 0.8)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(roundrect_rratio 0.25)
-			(net 16 "unconnected-(U3-Pad8)")
+			(net 25 "unconnected-(U3-PA7-Pad8)")
 			(pinfunction "PA7")
 			(pintype "bidirectional")
 			(uuid "b6a473a6-daff-496c-a6d1-8320b8d01fa9")
@@ -2868,7 +2874,7 @@
 			(at 1.45 -0.8)
 			(size 0.143431 0.143431)
 			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 25 "unconnected-(U3-Pad15)")
+			(net 17 "unconnected-(U3-PC0-Pad15)")
 			(pinfunction "PC0")
 			(pintype "bidirectional")
 			(options
@@ -2890,7 +2896,7 @@
 			(at 0.8 -1.45)
 			(size 0.143431 0.143431)
 			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 26 "unconnected-(U3-Pad16)")
+			(net 26 "unconnected-(U3-PC1-Pad16)")
 			(pinfunction "PC1")
 			(pintype "bidirectional")
 			(options
@@ -2913,7 +2919,7 @@
 			(size 0.2 0.8)
 			(layers "F.Cu" "F.Paste" "F.Mask")
 			(roundrect_rratio 0.25)
-			(net 10 "unconnected-(U3-Pad17)")
+			(net 27 "unconnected-(U3-PC2-Pad17)")
 			(pinfunction "PC2")
 			(pintype "bidirectional")
 			(uuid "f6e8f7dc-4a07-4b6e-a1cd-5d142c0a6032")
@@ -2942,7 +2948,7 @@
 			(at -0.8 -1.45)
 			(size 0.143431 0.143431)
 			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 17 "unconnected-(U3-Pad20)")
+			(net 20 "unconnected-(U3-PA1-Pad20)")
 			(pinfunction "PA1")
 			(pintype "bidirectional")
 			(options
@@ -3024,7 +3030,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -3060,7 +3066,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/a40e5e21-9a36-4f52-a95f-9b6b82195ce1")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -3235,7 +3243,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -3271,7 +3279,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "TO-???* *_Diode_* *SingleDiode* D_*")
 		(path "/39d138d9-0013-4c64-a1ed-8ebc0d7ee611")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -3468,7 +3478,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -3504,7 +3514,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/8eec64b7-5fc9-4d43-a498-c54def926897")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -3680,7 +3692,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -3716,7 +3728,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/7fa1853d-b13d-485b-ace8-9eefd2a30d90")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -3891,7 +3905,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -3927,7 +3941,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/a856a39e-118c-4252-a096-f2a18f6b8582")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -4102,7 +4118,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4138,7 +4154,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/54a00c48-93b9-47e9-8042-233a43c2c837")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -4313,7 +4331,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
 			(at 0 0 -90)
 			(layer "F.Fab")
 			(hide yes)
@@ -4349,7 +4367,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "TO-???* *_Diode_* *SingleDiode* D_*")
 		(path "/33160a44-922a-4e26-965e-158d31c95a43")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -4519,7 +4539,7 @@
 	(footprint "TestPoint:TestPoint_Pad_D1.0mm"
 		(layer "B.Cu")
 		(uuid "22a48b65-99a8-4367-8334-f586b32e5de0")
-		(at 133.9 42.54 180)
+		(at 133.9 45.08 180)
 		(descr "SMD pad as test Point, diameter 1.0mm")
 		(tags "test point SMD pad")
 		(property "Reference" "TP4"
@@ -4549,7 +4569,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -4585,7 +4605,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Pin* Test*")
 		(path "/f5238499-766e-4794-87c8-a37f9ca2c28e")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr exclude_from_pos_files)
 		(fp_circle
@@ -4666,7 +4688,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -4702,7 +4724,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Pin* Test*")
 		(path "/98f66c47-2c8e-4e28-a684-29ab3fc86ab6")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr exclude_from_pos_files)
 		(fp_circle
@@ -4783,7 +4807,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -4819,7 +4843,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Pin* Test*")
 		(path "/288fac59-31b7-4f20-8b1e-02ee90eb771e")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr exclude_from_pos_files)
 		(fp_circle
@@ -4900,7 +4926,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -4936,7 +4962,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Pin* Test*")
 		(path "/64964fb1-dc64-4d3f-a256-7e544e88d9db")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr exclude_from_pos_files)
 		(fp_circle
@@ -5016,7 +5044,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "unsurv_offline_pcb_footprints:QR_shop"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -5052,7 +5080,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Pin* Test*")
 		(path "/64b6d572-8755-4aa6-b1c3-ee18ce2b0638")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr board_only exclude_from_pos_files)
 		(fp_poly
@@ -5429,6 +5459,128 @@
 	)
 	(footprint "TestPoint:TestPoint_Pad_D1.0mm"
 		(layer "B.Cu")
+		(uuid "59824a80-0c84-4022-9554-033e4847f40a")
+		(at 133.9 60.9 180)
+		(descr "SMD pad as test Point, diameter 1.0mm")
+		(tags "test point SMD pad")
+		(property "Reference" "TP5"
+			(at 0 1.448 0)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "37fa3c7b-0991-4f3f-aa07-a4172fbcada1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 0 -1.55 0)
+			(layer "B.Fab")
+			(uuid "eef8d047-711b-423c-82d1-fea2a9b68aa0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "73eda5dc-c51d-4824-9523-26f7fd5ec61f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "1e8d9bd8-dbdd-4902-a9d1-cddde0ec1281")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "312a615f-fb38-4e1e-9463-97f7f76f442b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/70649aa3-c50a-4918-9c28-c0d66b9f2887")
+		(sheetname "Root")
+		(sheetfile "nfc_sense.kicad_sch")
+		(attr exclude_from_pos_files)
+		(fp_circle
+			(center 0 0)
+			(end 0 -0.7)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill none)
+			(layer "B.SilkS")
+			(uuid "2c3f9859-9ff5-4285-a4ac-3a3760f3058d")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill none)
+			(layer "B.CrtYd")
+			(uuid "f5e1dacd-afef-44c6-9874-b851771cdc78")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 1.45 0)
+			(layer "B.Fab")
+			(uuid "37c98c8e-bb9c-4f0e-8521-d780e9daf7c8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(pad "1" smd circle
+			(at 0 0 180)
+			(size 1 1)
+			(layers "B.Cu" "B.Mask")
+			(net 2 "ANT2")
+			(pinfunction "1")
+			(pintype "passive")
+			(uuid "cef9fddf-d4d0-44a9-a5a0-59df34578286")
+		)
+	)
+	(footprint "TestPoint:TestPoint_Pad_D1.0mm"
+		(layer "B.Cu")
 		(uuid "7e44dec4-4f39-42a7-99da-2a118b19e259")
 		(at 125.1 52.7 90)
 		(descr "SMD pad as test Point, diameter 1.0mm")
@@ -5460,7 +5612,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -5496,7 +5648,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Pin* Test*")
 		(path "/6be19c7a-f553-468a-a3a8-2b71a5f3d6f7")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr exclude_from_pos_files)
 		(fp_circle
@@ -5577,7 +5731,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -5613,7 +5767,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Pin* Test*")
 		(path "/549f9b15-750f-44af-ace2-03a8ea91ed67")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr exclude_from_pos_files)
 		(fp_circle
@@ -5694,7 +5850,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -5730,7 +5886,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Pin* Test*")
 		(path "/b02bde40-00e1-4283-85dd-e606a2044220")
+		(sheetname "Root")
 		(sheetfile "nfc_sense.kicad_sch")
 		(attr exclude_from_pos_files)
 		(fp_circle
@@ -5810,6 +5968,17 @@
 		(fill none)
 		(layer "B.SilkS")
 		(uuid "35f81790-e1d0-466c-9524-cb9cf38ec46b")
+	)
+	(gr_rect
+		(start 130.2 48.65)
+		(end 132.65 49.85)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill none)
+		(layer "B.SilkS")
+		(uuid "409792b0-71e3-42da-8a35-fd528ab2876b")
 	)
 	(gr_rect
 		(start 130.2 46.25)
@@ -6024,7 +6193,7 @@
 		(layer "Edge.Cuts")
 		(uuid "fb9eed54-b418-46be-b379-a53f58890444")
 	)
-	(gr_text "v 0.9 pre-production 09/24"
+	(gr_text "v 1.0 Made in Germany 11/24"
 		(at 129.45 62.75 0)
 		(layer "B.SilkS")
 		(uuid "39601692-0375-41be-913f-97de5174ff3a")
@@ -6036,8 +6205,8 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "VCC\nTX\nRX\nGND"
-		(at 131.4 46.3 0)
+	(gr_text "VCC\nTX\nRX\nGND\nNFC"
+		(at 131.4 46.9 0)
 		(layer "B.SilkS")
 		(uuid "4837fe64-2f5e-47fb-a844-a921867a05ad")
 		(effects
@@ -6661,6 +6830,22 @@
 		(uuid "fdcc9dc4-bb6e-4c5f-8dd5-2b99366db8e9")
 	)
 	(segment
+		(start 132.88 60.92)
+		(end 132.9 60.9)
+		(width 0.2)
+		(layer "F.Cu")
+		(net 2)
+		(uuid "0e600957-aa1e-4c96-aefa-f10624701ed3")
+	)
+	(segment
+		(start 132.48 60.92)
+		(end 132.88 60.92)
+		(width 0.2)
+		(layer "F.Cu")
+		(net 2)
+		(uuid "3508e3f9-4deb-4bc4-b8de-8bd3ccde8189")
+	)
+	(segment
 		(start 130.3 64.10368)
 		(end 130.37132 64.175)
 		(width 0.25)
@@ -6715,6 +6900,22 @@
 		(layer "F.Cu")
 		(net 2)
 		(uuid "d8b1a687-b3d2-4b0e-b038-0a182e219bce")
+	)
+	(via
+		(at 132.9 60.9)
+		(size 0.4)
+		(drill 0.2)
+		(layers "F.Cu" "B.Cu")
+		(net 2)
+		(uuid "3ac6af55-8937-4ff2-9a93-8ec9667c6428")
+	)
+	(segment
+		(start 132.9 60.9)
+		(end 133.9 60.9)
+		(width 0.2)
+		(layer "B.Cu")
+		(net 2)
+		(uuid "7ed8e2a8-9d95-4b9a-9487-36ba20499e3b")
 	)
 	(segment
 		(start 131.52 59.7)
@@ -7349,6 +7550,22 @@
 		(uuid "de8fbad2-1e92-4964-813a-279c4f32e6a7")
 	)
 	(segment
+		(start 131.75 52.675)
+		(end 131.225 52.15)
+		(width 0.2)
+		(layer "F.Cu")
+		(net 8)
+		(uuid "b0034b36-5b19-4cdf-90d5-db2e987de23f")
+	)
+	(segment
+		(start 131.75 54.91179)
+		(end 131.75 52.675)
+		(width 0.2)
+		(layer "F.Cu")
+		(net 8)
+		(uuid "fcd4e1d4-6da1-4faf-8cae-536730ec0b8b")
+	)
+	(segment
 		(start 129.85 50.8)
 		(end 128.8 50.8)
 		(width 0.2)
@@ -7525,22 +7742,6 @@
 		(uuid "d46c1979-e035-4c0d-b211-521f6f334003")
 	)
 	(segment
-		(start 131.75 52.675)
-		(end 131.225 52.15)
-		(width 0.2)
-		(layer "F.Cu")
-		(net 20)
-		(uuid "b0034b36-5b19-4cdf-90d5-db2e987de23f")
-	)
-	(segment
-		(start 131.75 54.91179)
-		(end 131.75 52.675)
-		(width 0.2)
-		(layer "F.Cu")
-		(net 20)
-		(uuid "fcd4e1d4-6da1-4faf-8cae-536730ec0b8b")
-	)
-	(segment
 		(start 127.725 60.875)
 		(end 126.725 59.875)
 		(width 0.25)
@@ -7565,14 +7766,6 @@
 		(uuid "1632ce0f-5614-484b-a36e-9169e6afabe6")
 	)
 	(segment
-		(start 129.75 45.4)
-		(end 132.5 45.4)
-		(width 0.2)
-		(layer "F.Cu")
-		(net 21)
-		(uuid "18cb214f-be1d-4dc2-96b6-f4f0fd11689f")
-	)
-	(segment
 		(start 129.98 40.65)
 		(end 129.98 40.0675)
 		(width 0.2)
@@ -7595,6 +7788,14 @@
 		(layer "F.Cu")
 		(net 21)
 		(uuid "4712e7e6-7150-48ec-ab90-ab9d26994ef7")
+	)
+	(segment
+		(start 129.75 45.4)
+		(end 132.35 45.4)
+		(width 0.2)
+		(layer "F.Cu")
+		(net 21)
+		(uuid "487a7c57-dc28-40a2-b44a-b6e9adbf6a3b")
 	)
 	(segment
 		(start 125.7 56.175)
@@ -7693,14 +7894,6 @@
 		(uuid "89d80afd-c3e0-4028-a5cb-5a055da20c73")
 	)
 	(segment
-		(start 132.5 45.4)
-		(end 133.9 44)
-		(width 0.2)
-		(layer "F.Cu")
-		(net 21)
-		(uuid "93ec2b33-1d2d-47dc-8a9e-33b7a6e4ee4d")
-	)
-	(segment
 		(start 124.2 51.2)
 		(end 125 50.4)
 		(width 0.2)
@@ -7731,6 +7924,14 @@
 		(layer "F.Cu")
 		(net 21)
 		(uuid "aee9946c-286a-4977-90d0-be222f6cf11a")
+	)
+	(segment
+		(start 132.35 45.4)
+		(end 132.65 45.7)
+		(width 0.2)
+		(layer "F.Cu")
+		(net 21)
+		(uuid "bd2acdcb-a142-4ff3-a8c3-25120f587700")
 	)
 	(segment
 		(start 126.725 59.875)
@@ -7813,12 +8014,12 @@
 		(uuid "fe2fd16a-728a-4f70-ba55-2b750b40e94c")
 	)
 	(via
-		(at 133.9 44)
+		(at 132.65 45.7)
 		(size 0.4)
 		(drill 0.2)
 		(layers "F.Cu" "B.Cu")
 		(net 21)
-		(uuid "3d0736ba-9a75-4c51-b3d0-e1407a5256bc")
+		(uuid "3760ef9f-addb-4dfc-b2e7-65f86d0b4b3e")
 	)
 	(via
 		(at 124.4 48.32)
@@ -7917,6 +8118,14 @@
 		(uuid "9f16b90f-7ff9-4b13-b086-7de1ccdee665")
 	)
 	(segment
+		(start 132.65 45.7)
+		(end 133.28 45.7)
+		(width 0.2)
+		(layer "B.Cu")
+		(net 21)
+		(uuid "a15d38be-6bf9-420a-b73a-bdd33124ce3b")
+	)
+	(segment
 		(start 126.9 47.2)
 		(end 126.48 47.62)
 		(width 0.2)
@@ -7941,20 +8150,20 @@
 		(uuid "adbf17c2-755b-43b5-8cc2-838fad2251b2")
 	)
 	(segment
+		(start 133.28 45.7)
+		(end 133.9 45.08)
+		(width 0.2)
+		(layer "B.Cu")
+		(net 21)
+		(uuid "c13be36e-5e9c-4516-aa59-a9bb38702b80")
+	)
+	(segment
 		(start 130.95 49.85)
 		(end 130.15 49.05)
 		(width 0.2)
 		(layer "B.Cu")
 		(net 21)
 		(uuid "c67b3265-6293-4a3a-8ec6-a6ebb488043e")
-	)
-	(segment
-		(start 133.9 44)
-		(end 133.9 42.54)
-		(width 0.2)
-		(layer "B.Cu")
-		(net 21)
-		(uuid "d529c0af-3332-4bdc-ad20-9f9c75d5df86")
 	)
 	(segment
 		(start 130.15 46.798528)
@@ -7973,16 +8182,16 @@
 		(uuid "ebb71a0b-3708-4712-a2af-29c076d61807")
 	)
 	(group ""
-		(uuid "5399131c-ee6d-41ec-b82d-9e7968f0b862")
-		(members "252e8761-6440-4c73-8d3d-dc0a18af26da" "35f81790-e1d0-466c-9524-cb9cf38ec46b"
-			"7564c28e-f0dc-4e9f-beee-0d70b3b9cfa9" "f4786ac5-3a4c-4886-ad5e-25b0dedb9954"
+		(uuid "316fe4bf-c7f3-4c3c-a608-394913fafce0")
+		(members "0eeefc4f-493b-4f30-98ee-5875d1673419" "409792b0-71e3-42da-8a35-fd528ab2876b"
+			"4837fe64-2f5e-47fb-a844-a921867a05ad" "67429108-a291-4ab0-825f-e852ee992d49"
+			"8bc3c6a4-1477-433e-b8dc-9f1720590474" "e2f644ac-b264-435b-bcb6-6f190a12e795"
 		)
 	)
 	(group ""
-		(uuid "6aef707a-1ed7-4f8d-a8d2-e1723c1251e8")
-		(members "0eeefc4f-493b-4f30-98ee-5875d1673419" "4837fe64-2f5e-47fb-a844-a921867a05ad"
-			"67429108-a291-4ab0-825f-e852ee992d49" "8bc3c6a4-1477-433e-b8dc-9f1720590474"
-			"e2f644ac-b264-435b-bcb6-6f190a12e795"
+		(uuid "5399131c-ee6d-41ec-b82d-9e7968f0b862")
+		(members "252e8761-6440-4c73-8d3d-dc0a18af26da" "35f81790-e1d0-466c-9524-cb9cf38ec46b"
+			"7564c28e-f0dc-4e9f-beee-0d70b3b9cfa9" "f4786ac5-3a4c-4886-ad5e-25b0dedb9954"
 		)
 	)
 )

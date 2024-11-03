@@ -2467,6 +2467,28 @@
 			)
 		)
 	)
+	(global_label "ANT2"
+		(shape input)
+		(at 266.7 105.41 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0e560fcd-ae79-439b-a6d2-802725851ab1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 266.7 112.9914 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "ANT1"
 		(shape input)
 		(at 107.315 60.96 90)
@@ -4148,7 +4170,7 @@
 				)
 			)
 		)
-		(property "Footprint" "unsurv_offline_pcb_footprints:TMP117 WSON-6-1EP_2x2mm_P0.65mm"
+		(property "Footprint" "unsurv_offline_pcb_footprints:TMP117 WSON-6-1EP_2x2mm_P0.65mm_no_pad_paste"
 			(at 217.805 33.655 0)
 			(effects
 				(font
@@ -4479,6 +4501,73 @@
 			(project ""
 				(path "/c54e1377-ff88-4224-9c85-352a20bf3450"
 					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 266.7 105.41 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "70649aa3-c50a-4918-9c28-c0d66b9f2887")
+		(property "Reference" "TP5"
+			(at 268.097 101.2733 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 268.097 103.8102 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 271.78 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 271.78 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 266.7 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8cfb5bb1-e5bf-40a7-9f72-469c719ef294")
+		)
+		(instances
+			(project "nfc_sense"
+				(path "/c54e1377-ff88-4224-9c85-352a20bf3450"
+					(reference "TP5")
 					(unit 1)
 				)
 			)
