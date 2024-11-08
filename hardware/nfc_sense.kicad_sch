@@ -3616,7 +3616,7 @@
 		(fields_autoplaced yes)
 		(uuid "3cca1b81-edf2-4dd5-864e-c8a1ba6c7441")
 		(property "Reference" "C6"
-			(at 129.286 49.3303 0)
+			(at 129.286 48.9528 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3624,8 +3624,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF"
-			(at 129.286 51.8672 0)
+		(property "Value" "100uF"
+			(at 129.286 51.3771 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3652,6 +3652,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 126.365 50.165 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "298W107X0004M2T"
 			(at 126.365 50.165 0)
 			(effects
 				(font
@@ -6061,7 +6070,7 @@
 		(fields_autoplaced yes)
 		(uuid "dd49231d-c829-45bb-aa59-e259aca61903")
 		(property "Reference" "C7"
-			(at 141.351 49.3303 0)
+			(at 141.351 48.9528 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6069,8 +6078,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF"
-			(at 141.351 51.8672 0)
+		(property "Value" "1uf"
+			(at 141.351 51.3771 0)
 			(effects
 				(font
 					(size 1.27 1.27)
