@@ -1,4 +1,4 @@
-25018993515939893
+25020773924949799
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -75758,7 +75758,7 @@ VQFN-20-1EP_3x3mm_P0.4mm_EP1.7x1.7mm
 VQFN, 20 Pin (http://ww1.microchip.com/downloads/en/DeviceDoc/20%20Lead%20VQFN%203x3x0_9mm_1_7EP%20U2B%20C04-21496a.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py
 VQFN NoLead
 0
-25
+23
 21
 Package_DFN_QFN
 VQFN-20-1EP_3x3mm_P0.4mm_EP1.7x1.7mm_ThermalVias
@@ -101420,7 +101420,7 @@ RF430_3x3mm_regular
 QFN, 16 Pin (http://www.cypress.com/file/46236/download), generated with kicad-footprint-generator ipc_dfn_qfn_generator.py
 QFN DFN_QFN
 0
-27
+18
 17
 unsurv_offline_pcb_footprints
 SFW15R-1STE1LF
@@ -101478,6 +101478,13 @@ UMH3N
 0
 6
 6
+unsurv_offline_pcb_footprints
+VQFN-20-1EP_3x3mm_P0.4mm_EP1.7x1.7mm_edited
+VQFN, 20 Pin (http://ww1.microchip.com/downloads/en/DeviceDoc/20%20Lead%20VQFN%203x3x0_9mm_1_7EP%20U2B%20C04-21496a.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py
+VQFN NoLead
+0
+23
+21
 unsurv_offline_pcb_footprints
 WLCSP4
 
