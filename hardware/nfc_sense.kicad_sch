@@ -3179,7 +3179,7 @@
 				)
 			)
 		)
-		(property "Footprint" "unsurv_offline_pcb_footprints:RF430_3x3mm_regular"
+		(property "Footprint" "unsurv_offline_pcb_footprints:RF430_3x3mm_regular_noBCu"
 			(at 59.69 26.035 0)
 			(effects
 				(font
