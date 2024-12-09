@@ -2,10 +2,11 @@
 #include "NfcUtils.h"
 #include <avr/sleep.h>
 
-#include <SparkFun_TMP117.h>
+#include <Adafruit_TMP117.h>
+#include <Adafruit_Sensor.h>
 
 bool postData = false;
-TMP117 tmp117;
+Adafruit_TMP117  tmp117;
 
 void setup()
 {
@@ -95,12 +96,15 @@ void setup()
   }
   else
   {
+
+  sensors_event_t temp; // create an empty event to be filled
+  tmp117.getEvent(&temp); //fill the empty event object with the current measurements
    
   // Fahrenheit
-  // updateNFC("Temperature: " + String((tmp117.readTempF(), 1) + " °F") ;
+  // updateNFC("Temperature: " + String((temp.temperature * 9/5) + 32, 1) + " °F") ;
   
   // Celcius
-  updateNFC("Temperature: " + String(tmp117.readTempC(), 1) + " °C") ;
+  updateNFC("Temperature: " + String(temp.temperature, 1) + " °C") ;
   }
   
   
