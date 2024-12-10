@@ -8107,7 +8107,7 @@
 	(footprint "unsurv_offline_pcb_footprints:QR_shop"
 		(layer "B.Cu")
 		(uuid "c771a7c5-63e5-4389-bf0c-5eaa9651609c")
-		(at 67.9 47.6 180)
+		(at 57 50 180)
 		(property "Reference" "QR_ref1"
 			(at 0 0 0)
 			(unlocked yes)
@@ -8554,7 +8554,7 @@
 	)
 	(gr_line
 		(start 51.4 47.6)
-		(end 51.4 49.2)
+		(end 51.4 48.9)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -8563,8 +8563,8 @@
 		(uuid "174c6752-a1e4-462c-84a0-949be2d3436f")
 	)
 	(gr_line
-		(start 48.6 49.2)
-		(end 47.8 49.2)
+		(start 48.6 48.9)
+		(end 47.8 48.9)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -8573,7 +8573,7 @@
 		(uuid "6c4f0463-37e1-46d8-9759-5f36010caeed")
 	)
 	(gr_line
-		(start 52.2 49.2)
+		(start 52.2 48.9)
 		(end 52.2 47.7)
 		(stroke
 			(width 0.1)
@@ -8583,8 +8583,8 @@
 		(uuid "8c99f479-3eab-4c95-bc44-86852b9db004")
 	)
 	(gr_line
-		(start 51.4 49.2)
-		(end 52.2 49.2)
+		(start 51.4 48.9)
+		(end 52.2 48.9)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -8604,7 +8604,7 @@
 		(uuid "a8a0a1a8-1580-4d0f-b249-d0a1ee501b8a")
 	)
 	(gr_line
-		(start 47.8 49.2)
+		(start 47.8 48.9)
 		(end 47.8 47.7)
 		(stroke
 			(width 0.1)
@@ -8614,7 +8614,7 @@
 		(uuid "b516aa3b-c84c-4a83-b29d-eb119fae64b2")
 	)
 	(gr_line
-		(start 48.6 49.2)
+		(start 48.6 48.9)
 		(end 48.6 47.6)
 		(stroke
 			(width 0.1)
@@ -8644,6 +8644,19 @@
 		(fill none)
 		(layer "Edge.Cuts")
 		(uuid "f819e2db-f771-49a7-896c-cd8654fecff8")
+	)
+	(gr_text "v0.9 NFC_temp coin\n  Made in Germany"
+		(at 54.8 59.7 0)
+		(layer "B.SilkS")
+		(uuid "48bd74bc-9efc-486c-b469-574b3a623078")
+		(effects
+			(font
+				(size 0.6 0.6)
+				(thickness 0.1)
+				(bold yes)
+			)
+			(justify left bottom mirror)
+		)
 	)
 	(segment
 		(start 51.7 56.6)
@@ -10446,20 +10459,12 @@
 		(uuid "3445bf2b-cd64-4cbb-91fd-1e9b7d4ef3c8")
 	)
 	(segment
-		(start 57.4 49.9)
-		(end 57.15 49.65)
-		(width 0.2)
-		(layer "F.Cu")
-		(net 15)
-		(uuid "5712b28d-634a-4217-8cbf-0a4ee87cb606")
-	)
-	(segment
-		(start 57.15 49.65)
+		(start 57.1 49.65)
 		(end 55.95 49.65)
 		(width 0.2)
 		(layer "F.Cu")
 		(net 15)
-		(uuid "74448f0f-a6d6-4150-8277-3a978238031a")
+		(uuid "6d5e6fe9-d44b-4998-9338-96c49b752423")
 	)
 	(segment
 		(start 47.2 51.3)
@@ -10478,7 +10483,7 @@
 		(uuid "5f69324e-4a3b-4a14-a764-86e404145ff7")
 	)
 	(via
-		(at 57.4 49.9)
+		(at 57.1 49.65)
 		(size 0.45)
 		(drill 0.25)
 		(layers "F.Cu" "B.Cu")
@@ -10486,44 +10491,44 @@
 		(uuid "bbf38d6f-a859-4a9e-8421-37262e73b2fb")
 	)
 	(segment
-		(start 47.4 51.5)
-		(end 57.3 51.5)
-		(width 0.2)
-		(layer "In1.Cu")
-		(net 15)
-		(uuid "04a4fbe7-d71f-40cc-8fbf-bd019ced014e")
-	)
-	(segment
-		(start 57.8 50.3)
-		(end 57.4 49.9)
-		(width 0.2)
-		(layer "In1.Cu")
-		(net 15)
-		(uuid "26e32081-cfbc-426c-9d7c-de626740fa5b")
-	)
-	(segment
 		(start 57.3 51.5)
-		(end 57.8 51)
-		(width 0.2)
-		(layer "In1.Cu")
-		(net 15)
-		(uuid "43c68592-c78c-4a93-a9e6-a1a228d1bfb6")
-	)
-	(segment
-		(start 57.8 51)
-		(end 57.8 50.3)
-		(width 0.2)
-		(layer "In1.Cu")
-		(net 15)
-		(uuid "45b615f9-d10d-4eeb-a214-82bfb70aa6f5")
-	)
-	(segment
-		(start 47.3 51.4)
 		(end 47.4 51.5)
 		(width 0.2)
 		(layer "In1.Cu")
 		(net 15)
-		(uuid "5f2a29f6-27eb-4804-89f1-d0de34e70a52")
+		(uuid "2f8549d5-533c-4850-95a0-50c45dee6463")
+	)
+	(segment
+		(start 57.8 50.35)
+		(end 57.8 51)
+		(width 0.2)
+		(layer "In1.Cu")
+		(net 15)
+		(uuid "6028c024-387b-4260-8550-269193b8cb3c")
+	)
+	(segment
+		(start 57.8 51)
+		(end 57.3 51.5)
+		(width 0.2)
+		(layer "In1.Cu")
+		(net 15)
+		(uuid "620f3db2-7fef-47aa-b0c5-22d9690b8028")
+	)
+	(segment
+		(start 47.4 51.5)
+		(end 47.3 51.4)
+		(width 0.2)
+		(layer "In1.Cu")
+		(net 15)
+		(uuid "94011070-2fc1-42df-be14-70d6376500e5")
+	)
+	(segment
+		(start 57.1 49.65)
+		(end 57.8 50.35)
+		(width 0.2)
+		(layer "In1.Cu")
+		(net 15)
+		(uuid "bb8f0814-e282-4f34-95c1-38ebda67abfe")
 	)
 	(segment
 		(start 45 48)
