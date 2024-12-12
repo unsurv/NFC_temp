@@ -5114,7 +5114,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "unsurv_offline_pcb_footprints:circular_NFC_386uH"
+		(property "Footprint" "unsurv_offline_pcb_footprints:circular_NFC_386uH_less_segments"
 			(at 167.64 19.685 0)
 			(effects
 				(font
