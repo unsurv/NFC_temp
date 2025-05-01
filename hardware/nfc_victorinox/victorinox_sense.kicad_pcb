@@ -7,6 +7,9 @@
 		(legacy_teardrops no)
 	)
 	(paper "A4")
+	(title_block
+		(comment 4 "AISLER Project ID: YAJLMFWK")
+	)
 	(layers
 		(0 "F.Cu" signal)
 		(1 "In1.Cu" signal)
@@ -6059,8 +6062,8 @@
 		(uuid "e2f644ac-b264-435b-bcb6-6f190a12e795")
 	)
 	(gr_circle
-		(center 125 48)
-		(end 124.95 48.1)
+		(center 126.1 49.5)
+		(end 126.05 49.6)
 		(stroke
 			(width 0.1)
 			(type solid)
