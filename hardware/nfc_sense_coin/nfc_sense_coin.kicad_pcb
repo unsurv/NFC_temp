@@ -8955,7 +8955,7 @@
 	)
 	(gr_line
 		(start 48.6 47.36)
-		(end 48.6 48.699999)
+		(end 48.6 48.649999)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -8964,25 +8964,46 @@
 		(uuid "0170d7d1-5c7d-4d8a-9a6e-06e03984adff")
 	)
 	(gr_arc
-		(start 48.6 48.699999)
-		(mid 50 42.503684)
-		(end 51.4 48.699999)
+		(start 48.6 48.649999)
+		(mid 50 42.548755)
+		(end 51.4 48.649999)
 		(stroke
 			(width 0.1)
 			(type default)
 		)
 		(layer "Edge.Cuts")
-		(uuid "7ae92c9d-f324-4fac-8e5b-f5451ac602f5")
+		(uuid "6822bb01-08e8-4fb2-8d4e-9bfeea20a091")
+	)
+	(gr_line
+		(start 48.25 38.5)
+		(end 48.25 37)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "7e1e8c6c-ba1e-41a1-ab51-3ea8c8224027")
 	)
 	(gr_line
 		(start 51.4 47.36)
-		(end 51.4 48.699999)
+		(end 51.4 48.649999)
 		(stroke
 			(width 0.1)
 			(type default)
 		)
 		(layer "Edge.Cuts")
 		(uuid "7e217ee5-c046-4bda-9dd3-12e640fbebb4")
+	)
+	(gr_arc
+		(start 48.25 37)
+		(mid 50 35.25)
+		(end 51.75 37)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "9bfdf3c9-0a3b-480c-92b8-dc7a603e7fad")
 	)
 	(gr_arc
 		(start 48.6 47.36)
@@ -8995,16 +9016,37 @@
 		(layer "Edge.Cuts")
 		(uuid "a8a0a1a8-1580-4d0f-b249-d0a1ee501b8a")
 	)
+	(gr_line
+		(start 51.750618 38.500094)
+		(end 51.75 37)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "c8d4ca5d-88e4-435c-930c-fa2c519d0915")
+	)
+	(gr_arc
+		(start 51.750618 38.500094)
+		(mid 49.999687 61.63239)
+		(end 48.25 38.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "cfab1f79-f187-4c10-a248-af2a51826c87")
+	)
 	(gr_circle
-		(center 50 50)
-		(end 61.62 50)
+		(center 50 37)
+		(end 51 37)
 		(stroke
 			(width 0.1)
 			(type default)
 		)
 		(fill none)
 		(layer "Edge.Cuts")
-		(uuid "f819e2db-f771-49a7-896c-cd8654fecff8")
+		(uuid "ea09677e-b42f-499b-aec8-2556af209dbb")
 	)
 	(gr_text "v0.9 NFC_temp coin\n  Made in Germany"
 		(at 54.8 59.7 0)
