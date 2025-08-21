@@ -11,6 +11,7 @@
 
 #define IRQ   (5)
 #define RESET (4)
+
 RF430CL330H_Shield nfc(IRQ, RESET);
 
 volatile byte into_fired = 0;
@@ -130,7 +131,7 @@ void setupNFC()
   // static length 35 bytes
   // nlen at index 26 & 27
   
-  byte nfcTemplateStatic[] = {
+  byte nfcTemplateStatic_ASDASD[] = {
   /*NDEF Tag Application Name*/                                                           \
   0xD2, 0x76, 0x00, 0x00, 0x85, 0x01, 0x01,                                               \
                                                                                           \
@@ -153,6 +154,25 @@ void setupNFC()
                                                            \
                                                                                            
   };
+
+    byte nfcTemplateStatic[] = {
+  /*NDEF Tag Application Name*/                                                           \
+  0xD2, 0x76, 0x00, 0x00, 0x85, 0x01, 0x01,                                               \
+                                                                                          \
+  /*Capability Container ID*/                                                             \
+  0xE1, 0x03,                                                                             \
+  0x00, 0x0F, /* CCLEN */                                                                 \
+  0x20,       /* Mapping version 2.0 */                                                   \
+  0x00, 0xF9, /* MLe (249 bytes); Maximum R-APDU data size */                             \
+  0x00, 0xF6, /* MLc (246 bytes); Maximum C-APDU data size */                             \
+  0x04,       /* Tag, File Control TLV (4 = NDEF file) */                                 \
+  0x06,       /* Length, File Control TLV (6 = 6 bytes of data for this tag) */           \
+  0xE1, 0x04, /* File Identifier */                                                       \
+  0x00, 0xF0, /* Max NDEF size (255 bytes of usable memory) */                            \
+  0x00,       /* NDEF file read access condition, read access without any security */     \
+  0x00,       /* NDEF file write access condition; write access without any security */   \
+                                                                                                                                                                             
+  };
     
   //write NDEF memory with Capability Container + NDEF message
   nfc.Write_Continuous(0, nfcTemplateStatic, sizeof(nfcTemplateStatic));
@@ -163,19 +183,39 @@ void setupNFC()
 
 
 void updateNFC(String nfcString)
-{   
+{
 
-  byte NDEFfieldsLength[] = {
+  byte NDEFfieldsLength_asdasdasdasdasd[] = {
   /* NDEF File for Hello World  (48 bytes total length) */                                \
   0x00, 0x13, /* NLEN; NDEF length (2 byte long message) */                               \
   0xD1, /* Record Header  */                                                              \
   0x01, /* Type Length */                                                                 \
-  0x0F, /* bytes after this -1  = NLEN - 4*/                                              \
+  0x00, /* bytes after this -1  = NLEN - 4*/                                              \
   0x54, /* type  T = text */                                                              \
   0x02,  /* ID length  */                                                                 \
   0x65, 0x6E, /* 'e', 'n', */                                                             \
   };
 
+  byte NDEFfieldsLength[] = {
+  /* NDEF File for Hello World */                                                        
+  0x00, 0x00, /* NLEN; NDEF length will be updated */                                     
+  0xD1,       /* Record Header (MB=1, ME=1, CF=0, SR=1, IL=0, TNF=0x01) */                                                              
+  0x01,       /* Type Length */                                                                 
+  0x00,       /* Payload Length (will be updated) */                                              
+  0x54,       /* Type: 'T' for text */                                                             
+  0x02,       /* Language Code Length */                                                                 
+  0x65, 0x6E  /* Language Code: 'en' */                                                             
+  };
+
+  byte NDEFfieldsLength_test[] = {
+  /* NDEF File for Hello World */                                                        
+  0x00, 0x00,       /* NLEN; NDEF length will be updated */                                     
+  0xD1,       /* Record Header (MB=1, ME=1, CF=0, SR=1, IL=0, TNF=0x01) */                                                              
+  0x01,       /* Type Length */                                                                 
+  0x0B,       /* Payload Length (will be updated) */                                              
+  0x55,       /* Type: 'T' for text */                                                             
+  0x01,                                                             
+  };
 
   // input
   int stringSize = nfcString.length() + 1;
@@ -223,6 +263,7 @@ void updateNFC(String nfcString)
   // nfc.Write_Register(INT_ENABLE_REG, EOW_INT_ENABLE + EOR_INT_ENABLE);
 
   nfc.Write_Extended_NDEFmessage(nfcInput, sizeof(nfcInput));
+  // nfc.Write_NDEFmessage(nfcInput, sizeof(nfcInput));
   
   //Configure INTO pin for active low and enable RF
   nfc.Write_Register(CONTROL_REG, RF_ENABLE);

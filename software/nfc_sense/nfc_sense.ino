@@ -105,6 +105,9 @@ void setup()
   
   // Celcius
   updateNFC("Temperature: " + String(temp.temperature, 1) + " °C") ;
+  
+  // test
+  // updateNFC("google.com") ;
   }
   
   
