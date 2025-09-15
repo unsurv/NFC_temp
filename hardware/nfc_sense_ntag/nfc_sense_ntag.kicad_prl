@@ -19,7 +19,7 @@
       "footprints": true,
       "graphics": true,
       "keepouts": true,
-      "lockedItems": false,
+      "lockedItems": true,
       "otherItems": true,
       "pads": true,
       "text": true,
@@ -74,7 +74,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "nfc_sense_coin.kicad_prl",
+    "filename": "nfc_sense_ntag.kicad_prl",
     "version": 3
   },
   "project": {
