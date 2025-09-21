@@ -2271,6 +2271,28 @@
 			)
 		)
 	)
+	(global_label "ED"
+		(shape input)
+		(at 189.23 120.65 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8bf64f0c-f95a-4a46-b0f7-90930f88c787")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 183.8258 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "SDA"
 		(shape input)
 		(at 80.01 97.79 270)
