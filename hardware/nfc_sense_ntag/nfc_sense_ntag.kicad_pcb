@@ -1923,7 +1923,7 @@
 			(at 0 -11.2 180)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "ed0a324c-204c-4d7a-8100-e40fe92052d1")
+			(uuid "186fefa7-7da9-495c-91f9-26c823455387")
 			(effects
 				(font
 					(size 1 1)
@@ -1935,7 +1935,7 @@
 			(at 0 8.1 180)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "7edcf406-2c03-4fb6-ba59-3c2a1957981e")
+			(uuid "7fba79fa-07b3-4b6c-94ab-3b3adc2b595c")
 			(effects
 				(font
 					(size 1 1)
@@ -1948,7 +1948,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "aeaf156d-d69d-43b4-a834-b55fa5daaf21")
+			(uuid "2ec8dbf9-a72d-4588-b441-58c0533d1e03")
 			(effects
 				(font
 					(size 1 1)
@@ -1961,7 +1961,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "fb7a7cf1-fb88-4de6-8e22-c255d95f158d")
+			(uuid "83d758a3-b7dc-46a6-9359-d711ea12e51f")
 			(effects
 				(font
 					(size 1 1)
@@ -1974,7 +1974,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3d10e8e7-8250-441a-895d-e8826fe6afe0")
+			(uuid "e278a49e-3be9-49d9-a7f8-e224f896d11b")
 			(effects
 				(font
 					(size 1 1)
@@ -1990,23 +1990,23 @@
 			(start -1 -1.4)
 			(end 1 1.4)
 			(stroke
-				(width 0.1)
+				(width 0.12)
 				(type default)
 			)
 			(fill none)
 			(layer "F.SilkS")
-			(uuid "30b3b9bd-00d8-4b3c-82e8-eb854fe3ab24")
+			(uuid "6607354d-31b2-4c70-a1ee-9f3642767587")
 		)
 		(fp_circle
-			(center -1.6 0.6)
-			(end -1.4 0.6)
+			(center -1.5 -0.6)
+			(end -1.3 -0.6)
 			(stroke
-				(width 0.1)
+				(width 0.12)
 				(type default)
 			)
 			(fill none)
 			(layer "F.SilkS")
-			(uuid "a7d650ac-f6f8-4868-9441-354eedd2ef48")
+			(uuid "b7d59914-417c-4605-92cb-2e493f2bed3f")
 		)
 		(pad "1" smd roundrect
 			(at -0.5 -0.6 90)
@@ -2017,7 +2017,7 @@
 			(pinfunction "GND")
 			(pintype "input")
 			(thermal_bridge_angle 45)
-			(uuid "a6ea4fa3-bb14-47bb-aa01-f29bd2037afa")
+			(uuid "a57c5699-409a-416e-994a-fa597c66d579")
 		)
 		(pad "2" smd roundrect
 			(at -0.5 -0.2 90)
@@ -2028,7 +2028,7 @@
 			(pinfunction "GND")
 			(pintype "input")
 			(thermal_bridge_angle 45)
-			(uuid "ab832b43-57fa-4b90-917d-141d14363f9a")
+			(uuid "e8e8ce88-8a92-4386-90fe-dee337237f9f")
 		)
 		(pad "3" smd roundrect
 			(at -0.5 0.2 90)
@@ -2039,7 +2039,7 @@
 			(pinfunction "N.C.")
 			(pintype "no_connect")
 			(thermal_bridge_angle 45)
-			(uuid "a74d7da3-9ac6-46ba-a73a-c208e01d6518")
+			(uuid "057d2ac2-c5b2-460c-ad19-5c95ce8f6bf3")
 		)
 		(pad "4" smd roundrect
 			(at -0.5 0.6 90)
@@ -2050,7 +2050,7 @@
 			(pinfunction "N.C.")
 			(pintype "no_connect")
 			(thermal_bridge_angle 45)
-			(uuid "aa7098df-e474-4c5f-af37-6615c85a0262")
+			(uuid "90b10916-1f42-4999-8fdd-5bffe35afad9")
 		)
 		(pad "5" smd roundrect
 			(at -0.6 1.1)
@@ -2061,7 +2061,7 @@
 			(pinfunction "N.C.")
 			(pintype "no_connect")
 			(thermal_bridge_angle 45)
-			(uuid "58d2ec81-de38-43fd-bdbb-32f5d28fda3d")
+			(uuid "bc5ef655-17a9-463c-8494-ae2382e5eaf6")
 		)
 		(pad "6" smd roundrect
 			(at -0.2 1.1)
@@ -2072,7 +2072,7 @@
 			(pinfunction "SDA")
 			(pintype "bidirectional")
 			(thermal_bridge_angle 45)
-			(uuid "571f0083-3169-4848-9262-eaa7f48082e0")
+			(uuid "d25ae23a-738e-4b3d-af98-37b74a06f265")
 		)
 		(pad "7" smd roundrect
 			(at 0.2 1.1)
@@ -2083,7 +2083,7 @@
 			(pinfunction "SCL")
 			(pintype "bidirectional")
 			(thermal_bridge_angle 45)
-			(uuid "e0aafe70-e145-4dde-9a55-7b96d838170d")
+			(uuid "f00a3292-581c-4250-8b83-1e05b6bacd59")
 		)
 		(pad "8" smd roundrect
 			(at 0.6 1.1)
@@ -2094,7 +2094,7 @@
 			(pinfunction "ED")
 			(pintype "bidirectional")
 			(thermal_bridge_angle 45)
-			(uuid "8e0f6ba8-9c8b-47cc-95f1-54cc9c0e4118")
+			(uuid "9bc70d26-b8a3-4093-bd66-2ad8b1ebce13")
 		)
 		(pad "9" smd roundrect
 			(at 0.5 0.6 270)
@@ -2105,7 +2105,7 @@
 			(pinfunction "VCC")
 			(pintype "input")
 			(thermal_bridge_angle 45)
-			(uuid "b640f1bf-ff64-488d-97e5-1f964147ad36")
+			(uuid "5467e172-fec0-4a9e-9352-518d818d81d5")
 		)
 		(pad "10" smd roundrect
 			(at 0.5 0.2 270)
@@ -2116,7 +2116,7 @@
 			(pinfunction "HPD")
 			(pintype "input")
 			(thermal_bridge_angle 45)
-			(uuid "9005339e-39c2-4aa7-bd87-70f4349e70bb")
+			(uuid "15a83005-984e-41f5-883f-88e272fe1aa3")
 		)
 		(pad "11" smd roundrect
 			(at 0.5 -0.2 270)
@@ -2127,7 +2127,7 @@
 			(pinfunction "GND")
 			(pintype "input")
 			(thermal_bridge_angle 45)
-			(uuid "81a0b277-9e43-4a6d-b7d6-02212fa8856d")
+			(uuid "3c603be3-ccb4-4c40-a4c0-07c62f27b34e")
 		)
 		(pad "12" smd roundrect
 			(at 0.5 -0.6 270)
@@ -2138,7 +2138,7 @@
 			(pinfunction "VOUT")
 			(pintype "input")
 			(thermal_bridge_angle 45)
-			(uuid "24b26908-0812-4e01-952e-f9cda552b3c4")
+			(uuid "71fe07bc-c048-4a6e-9c7b-145e8c5e1c2f")
 		)
 		(pad "13" smd roundrect
 			(at 0.6 -1.1)
@@ -2149,7 +2149,7 @@
 			(pinfunction "N.C")
 			(pintype "no_connect")
 			(thermal_bridge_angle 45)
-			(uuid "4355c198-76b1-4102-9f21-5117c8a7bc8b")
+			(uuid "043381b6-3e90-41e5-9754-d34bd9f9cb4a")
 		)
 		(pad "14" smd roundrect
 			(at 0.2 -1.1)
@@ -2160,7 +2160,7 @@
 			(pinfunction "LB")
 			(pintype "bidirectional")
 			(thermal_bridge_angle 45)
-			(uuid "195a3c39-709a-4c34-9979-d742d0f52644")
+			(uuid "e40953a5-7ee9-487d-ae7a-8b7eb37bc04c")
 		)
 		(pad "15" smd roundrect
 			(at -0.2 -1.1)
@@ -2171,7 +2171,7 @@
 			(pinfunction "LA")
 			(pintype "bidirectional")
 			(thermal_bridge_angle 45)
-			(uuid "d9a869c0-81f2-4f13-8e77-1d29d8f95b23")
+			(uuid "f8f6f0eb-d121-4639-b99b-46c264eb1d10")
 		)
 		(pad "16" smd roundrect
 			(at -0.6 -1.1)
@@ -2182,12 +2182,12 @@
 			(pinfunction "N.C.")
 			(pintype "no_connect")
 			(thermal_bridge_angle 45)
-			(uuid "106f4810-4b3e-48c8-80c4-e07edb03195a")
+			(uuid "b0488eb1-b897-4455-a962-2cde332632e3")
 		)
 		(group ""
-			(uuid "1a52981b-ba2a-4a78-8d58-6d1bc669fa4c")
-			(members "571f0083-3169-4848-9262-eaa7f48082e0" "58d2ec81-de38-43fd-bdbb-32f5d28fda3d"
-				"8e0f6ba8-9c8b-47cc-95f1-54cc9c0e4118" "e0aafe70-e145-4dde-9a55-7b96d838170d"
+			(uuid "96000fd4-63c4-4112-a978-5183b0bc40d8")
+			(members "9bc70d26-b8a3-4093-bd66-2ad8b1ebce13" "bc5ef655-17a9-463c-8494-ae2382e5eaf6"
+				"d25ae23a-738e-4b3d-af98-37b74a06f265" "f00a3292-581c-4250-8b83-1e05b6bacd59"
 			)
 		)
 	)
