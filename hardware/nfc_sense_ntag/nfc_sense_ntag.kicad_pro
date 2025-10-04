@@ -513,7 +513,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "nfc_sense_ntag.step",
       "svg": "",
       "vrml": ""
     },
