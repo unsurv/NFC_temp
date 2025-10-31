@@ -1,5 +1,6 @@
 #include "Wire.h"
 #include "NfcUtils.h"
+#include "RF430CL330H_Shield.h"
 #include <avr/sleep.h>
 
 #include <Adafruit_TMP117.h>
@@ -89,7 +90,7 @@ void setup()
   // attachInterrupt(digitalPinToInterrupt(IRQ), nfcIntHandler, FALLING);
   
   // Try to initialize!
-  setupNFC();
+  // setupNFC();
 
   if (!tmp117.begin()) {
     updateNFC("TMP117 not found. Aborting...");
@@ -104,14 +105,16 @@ void setup()
   // updateNFC("Temperature: " + String((temp.temperature * 9/5) + 32, 1) + " °F") ;
   
   // Celcius
-  updateNFC("Temperature: " + String(temp.temperature, 1) + " °C") ;
+  // updateNFC("Temperature: " + String(temp.temperature, 1) + " °C") ;
   
   // test
-  // updateNFC("google.com") ;
+  //updateNFC("google.com") ;
+
+  RF430CL330H_Shield nfc(IRQ, RESET);
+  
+  nfc.begin();
   }
   
-  
-
 
   // Before sleeping
  
