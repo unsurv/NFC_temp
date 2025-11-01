@@ -15,7 +15,6 @@
 #define OS_ANDROID 0
 #define OS_IOS 1
 
-
 #define RF430_DEFAULT_DATA                                                              \
 {                                                                                       \
 /*NDEF Tag Application Name*/                                                           \
@@ -226,7 +225,7 @@ void setupNFC()
   0x00, 0xF0, /* Max NDEF size (255 bytes of usable memory) */                            \
   0x00,       /* NDEF file read access condition, read access without any security */     \
   0x00,       /* NDEF file write access condition; write access without any security */   \
-  0xE1, 0x04,     /* NDEF File ID NEW NEW NEW*/  
+  0xE1, 0x04,     /* NDEF File ID NEW NEW NEW*/                                           \  
                                                                                                                                                                              
   };
     
@@ -264,7 +263,7 @@ void updateNFC(int osType, String nfcString)
   0x02,       /* Language Code Length */                                                                 
   0x65, 0x6E  /* Language Code: 'en' */                                                             
   };
-
+  
   byte NDEFfieldsLength_URL[] = {
   /* NDEF File for Hello World */                                                        
   0x00, 0x00,       /* NLEN; NDEF length will be updated */                                     
@@ -274,19 +273,42 @@ void updateNFC(int osType, String nfcString)
   0x55,       /* Type: 'T' for text */                                                             
   0x03,                                                             
   };
+  
+  if (osType == OS_IOS) {
+    byte NDEFfieldsLength[] = {
+      0xE1, 0x04,     /* NDEF File ID NEW NEW NEW*/
+  
+      // NDEF File body starts immediately after CC file
+      0x00, 0x00, /* NLEN = bytes after this */                                     
+      0xD1,       /* Record Header (MB=1, ME=1, CF=0, SR=1, IL=0, TNF=0x01) */                                                              
+      0x01,       /* Type Length */                                                                 
+      0x00,       /* Payload Length = bytes after this -1(will be updated) */                                              
+      0x55,       /* Type = URI */                                                             
+      0x02,
+    };
+  } else {
+    
+    byte NDEFfieldsLength[] = {
+    /* NDEF File for Hello World */                                                        
+      0x00, 0x00, /* NLEN; NDEF length will be updated */                                     
+      0xD1,       /* Record Header (MB=1, ME=1, CF=0, SR=1, IL=0, TNF=0x01) */                                                              
+      0x01,       /* Type Length */                                                                 
+      0x00,       /* Payload Length (will be updated) */                                              
+      0x54,       /* Type: 'T' for text */                                                             
+      0x02,       /* Language Code Length */                                                                 
+      0x65, 0x6E  /* Language Code: 'en' */                                                             
+    };
+  }
 
   byte NDEFfieldsLength[] = {
-    /* NDEF file write access condition; write access without any security */   \
-
-  // NDEF File body starts immediately after CC file
-  0x00, 0x00, /* NLEN = bytes after this */                                     
-  0xD1,       /* Record Header (MB=1, ME=1, CF=0, SR=1, IL=0, TNF=0x01) */                                                              
-  0x01,       /* Type Length */                                                                 
-  0x00,       /* Payload Length = bytes after this -1(will be updated) */                                              
-  0x55,       /* Type: 'T' for text */                                                             
-  0x02,
-  };
-
+      // NDEF File body starts immediately after CC file
+      0x00, 0x00, /* NLEN = bytes after this */                                     
+      0xD1,       /* Record Header (MB=1, ME=1, CF=0, SR=1, IL=0, TNF=0x01) */                                                              
+      0x01,       /* Type Length */                                                                 
+      0x00,       /* Payload Length = bytes after this -1(will be updated) */                                              
+      0x55,       /* Type = URI */                                                             
+      0x02,
+    };
 
   // input
   int stringSize = nfcString.length() + 1;
@@ -299,19 +321,16 @@ void updateNFC(int osType, String nfcString)
 
   if (osType == OS_IOS) {
     // set lengths in NDEF
-    NDEFfieldsLength[1] = stringSize + 5;
-    NDEFfieldsLength[4] = stringSize + 5 - 4;
+    NDEFfieldsLength[1] = stringSize + 4;
+    NDEFfieldsLength[4] = stringSize + 4 - 4;
   } else {
     // set lengths in NDEF
     NDEFfieldsLength[1] = stringSize + 8;
     NDEFfieldsLength[4] = stringSize + 8 - 4;
   }
-  
-
 
   // total size
   int nfcInputSize = sizeof(NDEFfieldsLength) + stringSize;
-  // total array
   byte nfcInput[nfcInputSize];
 
   int pointer;
