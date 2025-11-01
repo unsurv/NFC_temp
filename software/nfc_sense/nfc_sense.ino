@@ -11,7 +11,8 @@ Adafruit_TMP117  tmp117;
 
 void setup()
 {
-  
+
+  int targetOS = OS_IOS;
   
   // Serial.begin(9600);
 
@@ -93,7 +94,7 @@ void setup()
   // setupNFC();
 
   if (!tmp117.begin()) {
-    updateNFC("TMP117 not found. Aborting...");
+    updateNFC(targetOS, "TMP117 not found. Aborting...");
   }
   else
   {
@@ -108,11 +109,11 @@ void setup()
   // updateNFC("Temperature: " + String(temp.temperature, 1) + " °C") ;
   
   // test
-  //updateNFC("google.com") ;
+  updateNFC(targetOS, "google.com") ;
 
-  RF430CL330H_Shield nfc(IRQ, RESET);
+  // RF430CL330H_Shield nfc(IRQ, RESET);
   
-  nfc.begin();
+  // nfc.begin();
   }
   
 

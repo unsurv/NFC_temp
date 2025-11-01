@@ -12,6 +12,10 @@
 #define IRQ   (5)
 #define RESET (4)
 
+#define OS_ANDROID 0
+#define OS_IOS 1
+
+
 #define RF430_DEFAULT_DATA                                                              \
 {                                                                                       \
 /*NDEF Tag Application Name*/                                                           \
@@ -235,7 +239,7 @@ void setupNFC()
 
 
 
-void updateNFC(String nfcString)
+void updateNFC(int osType, String nfcString)
 {
 
 
@@ -271,17 +275,17 @@ void updateNFC(String nfcString)
   0x03,                                                             
   };
 
-    byte NDEFfieldsLength[] = {
-      /* NDEF file write access condition; write access without any security */   \
-  
-    // NDEF File body starts immediately after CC file
-    0x00, 0x14,       /* NLEN; NDEF length will be updated */                                     
-    0xD1,       /* Record Header (MB=1, ME=1, CF=0, SR=1, IL=0, TNF=0x01) */                                                              
-    0x01,       /* Type Length */                                                                 
-    0x0E,       /* Payload Length (will be updated) */                                              
-    0x55,       /* Type: 'T' for text */                                                             
-    0x03,
-    };
+  byte NDEFfieldsLength[] = {
+    /* NDEF file write access condition; write access without any security */   \
+
+  // NDEF File body starts immediately after CC file
+  0x00, 0x00, /* NLEN = bytes after this */                                     
+  0xD1,       /* Record Header (MB=1, ME=1, CF=0, SR=1, IL=0, TNF=0x01) */                                                              
+  0x01,       /* Type Length */                                                                 
+  0x00,       /* Payload Length = bytes after this -1(will be updated) */                                              
+  0x55,       /* Type: 'T' for text */                                                             
+  0x02,
+  };
 
 
   // input
@@ -293,9 +297,17 @@ void updateNFC(String nfcString)
   // transfer String
   nfcString.getBytes(inputString, stringSize);
 
-  // set lengths in NDEF
-  NDEFfieldsLength[1] = stringSize + 8;
-  NDEFfieldsLength[4] = stringSize + 8 - 4;
+  if (osType == OS_IOS) {
+    // set lengths in NDEF
+    NDEFfieldsLength[1] = stringSize + 5;
+    NDEFfieldsLength[4] = stringSize + 5 - 4;
+  } else {
+    // set lengths in NDEF
+    NDEFfieldsLength[1] = stringSize + 8;
+    NDEFfieldsLength[4] = stringSize + 8 - 4;
+  }
+  
+
 
   // total size
   int nfcInputSize = sizeof(NDEFfieldsLength) + stringSize;
