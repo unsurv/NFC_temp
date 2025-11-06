@@ -127,7 +127,7 @@
 
 #define TEST_MODE_KEY           0x004E
 
-#define RF430_TEST                                                                      \
+#define RF430_TEST_1                                                                      \
 {                                                                                       \
 /*NDEF Tag Application Name*/                                                           \
 0xD2, 0x76, 0x00, 0x00, 0x85, 0x01, 0x01,                                               \
@@ -161,6 +161,72 @@
 0x68, 0x65, 0x72, 0x65, 0x20, 0x63, 0x6f, 0x75, 0x6c, 0x64, 0x20, 0x62, 0x65, 0x20,     \
 0x61, 0x20, 0x6a, 0x73, 0x6f, 0x6e, 0x20, 0x66, 0x69, 0x6c, 0x65, 0x20, 0x77, 0x69,     \
 0x74, 0x68, 0x20, 0x69, 0x6e, 0x66, 0x6f      \
+}
+
+#define RF430_iOS_working_URL                                                                      \
+{                                                                                       \
+/* NDEF Tag Application Name */                                                         \
+0xD2, 0x76, 0x00, 0x00, 0x85, 0x01, 0x01,                                               \
+                                                                                        \
+/* Capability Container ID */                                                           \
+0xE1, 0x03,                                                                             \
+0x00, 0x0F, /* CCLEN */                                                                 \
+0x20,       /* Mapping version 2.0 */                                                   \
+0x00, 0xF9, /* MLe (249 bytes); Maximum R-APDU data size */                             \
+0x00, 0xF6, /* MLc (246 bytes); Maximum C-APDU data size */                             \
+0x04,       /* Tag, File Control TLV (4 = NDEF file) */                                 \
+0x06,       /* Length, File Control TLV (6 = 6 bytes of data for this tag) */           \
+0xE1, 0x04, /* File Identifier */                                                       \
+0x0B, 0xDF, /* Max NDEF size (3037 bytes of usable memory) */                           \
+0x00,       /* NDEF file read access condition */                                       \
+0x00,       /* NDEF file write access condition */                                      \
+                                                                                        \
+/* NDEF File ID */                                                                      \
+0xE1, 0x04,                                                                             \
+                                                                                        \
+/* NDEF File for URI Record ("https://example.com") */                                  \
+0x00, 0x10, /* NLEN = bytes after this */                             \
+0xD1, /* Record Header: MB=1, ME=1, SR=1, TNF=1 (Well-known type) */                   \
+0x01, /* Type Length = 1 */                                                             \
+0x0C, /* Payload Length = bytes after this -1, NLEN -4 */                                                   \
+0x55, /* Type = 'U' (URI Record) */                                                     \
+0x02, /* URI Identifier Code = 0x01 ("https://www.") */                                 \
+                                                                                        \
+/* Payload: "example.com" (after https://www.) */                                       \
+0x65, 0x78, 0x61, 0x6D, 0x70, 0x6C, 0x65, 0x2E, 0x63, 0x6F, 0x6D                      \
+}
+
+#define RF430_TEST                                                                      \
+{                                                                                       \
+/* NDEF Tag Application Name */                                                         \
+0xD2, 0x76, 0x00, 0x00, 0x85, 0x01, 0x01,                                               \
+                                                                                        \
+/* Capability Container ID */                                                           \
+0xE1, 0x03,                                                                             \
+0x00, 0x0F, /* CCLEN */                                                                 \
+0x20,       /* Mapping version 2.0 */                                                   \
+0x00, 0xF9, /* MLe (249 bytes); Maximum R-APDU data size */                             \
+0x00, 0xF6, /* MLc (246 bytes); Maximum C-APDU data size */                             \
+0x04,       /* Tag, File Control TLV (4 = NDEF file) */                                 \
+0x06,       /* Length, File Control TLV (6 = 6 bytes of data for this tag) */           \
+0xE1, 0x04, /* File Identifier */                                                       \
+0x0B, 0xDF, /* Max NDEF size (3037 bytes of usable memory) */                           \
+0x00,       /* NDEF file read access condition */                                       \
+0x00,       /* NDEF file write access condition */                                      \
+                                                                                        \
+/* NDEF File ID */                                                                      \
+0xE1, 0x04,                                                                             \
+                                                                                        \
+/* NDEF File for URI Record ("https://example.com") */                                  \
+0x00, 0x10, /* NLEN = bytes after this */                             \
+0xD1, /* Record Header: MB=1, ME=1, SR=1, TNF=1 (Well-known type) */                   \
+0x01, /* Type Length = 1 */                                                             \
+0x0C, /* Payload Length = bytes after this -1, NLEN -4 */                                                   \
+0x55, /* Type = 'U' (URI Record) */                                                     \
+0x02, /* URI Identifier Code = 0x01 ("https://www.") */                                 \
+                                                                                        \
+/* Payload: "example.com" (after https://www.) */                                       \
+0x65, 0x78, 0x61, 0x6D, 0x70, 0x6C, 0x65, 0x2E, 0x63, 0x6F, 0x6D                      \
 }
 
 class RF430CL330H_Shield

@@ -12,7 +12,42 @@
 #define IRQ   (5)
 #define RESET (4)
 
-RF430CL330H_Shield nfc(IRQ, RESET);
+#define OS_ANDROID 0
+#define OS_IOS 1
+
+#define RF430_DEFAULT_DATA                                                              \
+{                                                                                       \
+/*NDEF Tag Application Name*/                                                           \
+0xD2, 0x76, 0x00, 0x00, 0x85, 0x01, 0x01,                                               \
+                                                                                        \
+/*Capability Container ID*/                                                             \
+0xE1, 0x03,                                                                             \
+0x00, 0x0F, /* CCLEN */                                                                 \
+0x20,       /* Mapping version 2.0 */                                                   \
+0x00, 0xF9, /* MLe (249 bytes); Maximum R-APDU data size */                             \
+0x00, 0xF6, /* MLc (246 bytes); Maximum C-APDU data size */                             \
+0x04,       /* Tag, File Control TLV (4 = NDEF file) */                                 \
+0x06,       /* Length, File Control TLV (6 = 6 bytes of data for this tag) */           \
+0xE1, 0x04, /* File Identifier */                                                       \
+0x0B, 0xDF, /* Max NDEF size (3037 bytes of useable memory) */                          \
+0x00,       /* NDEF file read access condition, read access without any security */     \
+0x00,       /* NDEF file write access condition; write access without any security */   \
+                                                                                        \
+/* NDEF File ID */                                                                      \
+0xE1, 0x04,                                                                             \
+                                                                                        \
+/* NDEF File for Hello World  (48 bytes total length) */                                \
+0x00, 0x14, /* NLEN; NDEF length (2 byte long message) */                               \
+0xD1, 0x01, 0x10,                                                                       \
+0x54, /* T = text */                                                                    \
+0x02,                                                                                   \
+0x65, 0x6E, /* 'e', 'n', */                                                             \
+                                                                                        \
+/* 'Hello, world!' NDEF data; Empty NDEF message, length should match NLEN*/            \
+0x48, 0x65, 0x6C, 0x6C, 0x6f, 0x2c, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x21            \
+}
+
+
 
 volatile byte into_fired = 0;
 uint16_t flags = 0;
@@ -55,7 +90,7 @@ byte nfcTemplate[] = {
             
 };
 
-
+RF430CL330H_Shield nfc(IRQ, RESET);
 
 /**
 **  @brief  interrupt service
@@ -155,7 +190,7 @@ void setupNFC()
                                                                                            
   };
 
-    byte nfcTemplateStatic[] = {
+    byte nfcTemplateStatic_correct[] = {
   /*NDEF Tag Application Name*/                                                           \
   0xD2, 0x76, 0x00, 0x00, 0x85, 0x01, 0x01,                                               \
                                                                                           \
@@ -173,6 +208,26 @@ void setupNFC()
   0x00,       /* NDEF file write access condition; write access without any security */   \
                                                                                                                                                                              
   };
+
+      byte nfcTemplateStatic[] = {
+  /*NDEF Tag Application Name*/                                                           \
+  0xD2, 0x76, 0x00, 0x00, 0x85, 0x01, 0x01,                                               \
+                                                                                          \
+  /*Capability Container ID*/                                                             \
+  0xE1, 0x03,                                                                             \
+  0x00, 0x0F, /* CCLEN */                                                                 \
+  0x20,       /* Mapping version 2.0 */                                                   \
+  0x00, 0xF9, /* MLe (249 bytes); Maximum R-APDU data size */                             \
+  0x00, 0xF6, /* MLc (246 bytes); Maximum C-APDU data size */                             \
+  0x04,       /* Tag, File Control TLV (4 = NDEF file) */                                 \
+  0x06,       /* Length, File Control TLV (6 = 6 bytes of data for this tag) */           \
+  0xE1, 0x04, /* File Identifier */                                                       \
+  0x00, 0xF0, /* Max NDEF size (255 bytes of usable memory) */                            \
+  0x00,       /* NDEF file read access condition, read access without any security */     \
+  0x00,       /* NDEF file write access condition; write access without any security */   \
+  0xE1, 0x04,     /* NDEF File ID NEW NEW NEW*/                                           \  
+                                                                                                                                                                             
+  };
     
   //write NDEF memory with Capability Container + NDEF message
   nfc.Write_Continuous(0, nfcTemplateStatic, sizeof(nfcTemplateStatic));
@@ -182,8 +237,10 @@ void setupNFC()
 }
 
 
-void updateNFC(String nfcString)
+
+void updateNFC(int osType, String nfcString)
 {
+
 
   byte NDEFfieldsLength_asdasdasdasdasd[] = {
   /* NDEF File for Hello World  (48 bytes total length) */                                \
@@ -196,7 +253,7 @@ void updateNFC(String nfcString)
   0x65, 0x6E, /* 'e', 'n', */                                                             \
   };
 
-  byte NDEFfieldsLength[] = {
+  byte NDEFfieldsLength_correct[] = {
   /* NDEF File for Hello World */                                                        
   0x00, 0x00, /* NLEN; NDEF length will be updated */                                     
   0xD1,       /* Record Header (MB=1, ME=1, CF=0, SR=1, IL=0, TNF=0x01) */                                                              
@@ -206,16 +263,52 @@ void updateNFC(String nfcString)
   0x02,       /* Language Code Length */                                                                 
   0x65, 0x6E  /* Language Code: 'en' */                                                             
   };
-
-  byte NDEFfieldsLength_test[] = {
+  
+  byte NDEFfieldsLength_URL[] = {
   /* NDEF File for Hello World */                                                        
   0x00, 0x00,       /* NLEN; NDEF length will be updated */                                     
   0xD1,       /* Record Header (MB=1, ME=1, CF=0, SR=1, IL=0, TNF=0x01) */                                                              
   0x01,       /* Type Length */                                                                 
   0x0B,       /* Payload Length (will be updated) */                                              
   0x55,       /* Type: 'T' for text */                                                             
-  0x01,                                                             
+  0x03,                                                             
   };
+  
+  if (osType == OS_IOS) {
+    byte NDEFfieldsLength[] = {
+      0xE1, 0x04,     /* NDEF File ID NEW NEW NEW*/
+  
+      // NDEF File body starts immediately after CC file
+      0x00, 0x00, /* NLEN = bytes after this */                                     
+      0xD1,       /* Record Header (MB=1, ME=1, CF=0, SR=1, IL=0, TNF=0x01) */                                                              
+      0x01,       /* Type Length */                                                                 
+      0x00,       /* Payload Length = bytes after this -1(will be updated) */                                              
+      0x55,       /* Type = URI */                                                             
+      0x02,
+    };
+  } else {
+    
+    byte NDEFfieldsLength[] = {
+    /* NDEF File for Hello World */                                                        
+      0x00, 0x00, /* NLEN; NDEF length will be updated */                                     
+      0xD1,       /* Record Header (MB=1, ME=1, CF=0, SR=1, IL=0, TNF=0x01) */                                                              
+      0x01,       /* Type Length */                                                                 
+      0x00,       /* Payload Length (will be updated) */                                              
+      0x54,       /* Type: 'T' for text */                                                             
+      0x02,       /* Language Code Length */                                                                 
+      0x65, 0x6E  /* Language Code: 'en' */                                                             
+    };
+  }
+
+  byte NDEFfieldsLength[] = {
+      // NDEF File body starts immediately after CC file
+      0x00, 0x00, /* NLEN = bytes after this */                                     
+      0xD1,       /* Record Header (MB=1, ME=1, CF=0, SR=1, IL=0, TNF=0x01) */                                                              
+      0x01,       /* Type Length */                                                                 
+      0x00,       /* Payload Length = bytes after this -1(will be updated) */                                              
+      0x55,       /* Type = URI */                                                             
+      0x00,
+    };
 
   // input
   int stringSize = nfcString.length() + 1;
@@ -226,13 +319,18 @@ void updateNFC(String nfcString)
   // transfer String
   nfcString.getBytes(inputString, stringSize);
 
-  // set lengths in NDEF
-  NDEFfieldsLength[1] = stringSize + 8;
-  NDEFfieldsLength[4] = stringSize + 8 - 4;
+  if (osType == OS_IOS) {
+    // set lengths in NDEF
+    NDEFfieldsLength[1] = stringSize + 4;
+    NDEFfieldsLength[4] = stringSize + 4 - 4;
+  } else {
+    // set lengths in NDEF
+    NDEFfieldsLength[1] = stringSize + 8;
+    NDEFfieldsLength[4] = stringSize + 8 - 4;
+  }
 
   // total size
   int nfcInputSize = sizeof(NDEFfieldsLength) + stringSize;
-  // total array
   byte nfcInput[nfcInputSize];
 
   int pointer;
@@ -263,6 +361,7 @@ void updateNFC(String nfcString)
   // nfc.Write_Register(INT_ENABLE_REG, EOW_INT_ENABLE + EOR_INT_ENABLE);
 
   nfc.Write_Extended_NDEFmessage(nfcInput, sizeof(nfcInput));
+  // nfc.Write_Extended_NDEFmessage(nfcUrlTest, sizeof(nfcUrlTest));
   // nfc.Write_NDEFmessage(nfcInput, sizeof(nfcInput));
   
   //Configure INTO pin for active low and enable RF

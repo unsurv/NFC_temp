@@ -99,7 +99,7 @@ void RF430CL330H_Shield::begin()
     //Upon exit of this block, the control register is set to 0x0
     /** Fix end */
 
-    byte NDEF_Application_Data[] = RF430_TEST;
+    byte NDEF_Application_Data[] = RF430_iOS_working_URL;
     //write NDEF memory with Capability Container + NDEF message
     Write_Continuous(0, NDEF_Application_Data, sizeof(NDEF_Application_Data));
 

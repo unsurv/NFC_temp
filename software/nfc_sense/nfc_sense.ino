@@ -1,5 +1,6 @@
 #include "Wire.h"
 #include "NfcUtils.h"
+#include "RF430CL330H_Shield.h"
 #include <avr/sleep.h>
 
 #include <Adafruit_TMP117.h>
@@ -10,8 +11,7 @@ Adafruit_TMP117  tmp117;
 
 void setup()
 {
-  
-  
+ 
   // Serial.begin(9600);
 
   // power saving
@@ -54,20 +54,6 @@ void setup()
      (&PORTC.PIN0CTRL)[pin] = PORT_ISC_INPUT_DISABLE_gc; //Disable on PCx pin
     }
   /*
-
-  
-
-  // Before sleeping
-  ADC0.CTRLA &= ~ADC_ENABLE_bm; //Very important on the tinyAVR 2-series
-  
-  /*
-  for (int i = 0; i<5; i++){
-
-  digitalWrite(1, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);                       // wait for a second
-  digitalWrite(1, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);
-  };
    
   */
 
@@ -83,6 +69,10 @@ void setup()
   int temp = analogRead(18);
   */
 
+  int targetOS = OS_IOS;
+  #define TARGET_IOS
+  // #define TARGET_ANDROID
+
   Wire.begin();
 
   //enable interrupt 1
@@ -92,7 +82,7 @@ void setup()
   setupNFC();
 
   if (!tmp117.begin()) {
-    updateNFC("TMP117 not found. Aborting...");
+    updateNFC(targetOS, "TMP117 not found. Aborting...");
   }
   else
   {
@@ -101,17 +91,20 @@ void setup()
   tmp117.getEvent(&temp); //fill the empty event object with the current measurements
    
   // Fahrenheit
-  // updateNFC("Temperature: " + String((temp.temperature * 9/5) + 32, 1) + " °F") ;
+  // updateNFC(targetOS, "Temperature: " + String((temp.temperature * 9/5) + 32, 1) + " °F") ;
   
   // Celcius
-  updateNFC("Temperature: " + String(temp.temperature, 1) + " °C") ;
+  // updateNFC(targetOS, "Temperature: " + String(temp.temperature, 1) + " °C") ;
   
   // test
-  // updateNFC("google.com") ;
+  updateNFC(targetOS, "http://ha:8123/api/webhook/nfc-temp-value?temp=" + String(temp.temperature, 1));
+
+
+  // RF430CL330H_Shield nfc(IRQ, RESET);
+  
+  // nfc.begin();
   }
   
-  
-
 
   // Before sleeping
  
