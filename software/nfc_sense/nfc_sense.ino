@@ -97,7 +97,8 @@ void setup()
   // updateNFC(targetOS, "Temperature: " + String(temp.temperature, 1) + " °C") ;
   
   // test
-  updateNFC(targetOS, "example.com") ;
+  updateNFC(targetOS, "http://ha:8123/api/webhook/nfc-temp-value?temp=" + String(temp.temperature, 1));
+
 
   // RF430CL330H_Shield nfc(IRQ, RESET);
   

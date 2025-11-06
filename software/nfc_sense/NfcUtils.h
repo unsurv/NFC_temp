@@ -307,7 +307,7 @@ void updateNFC(int osType, String nfcString)
       0x01,       /* Type Length */                                                                 
       0x00,       /* Payload Length = bytes after this -1(will be updated) */                                              
       0x55,       /* Type = URI */                                                             
-      0x02,
+      0x00,
     };
 
   // input
