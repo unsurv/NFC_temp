@@ -1,4 +1,4 @@
-25029826111737869
+25047473942175236
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -101227,6 +101227,20 @@ unsurv_offline_pcb_footprints
 4
 2
 unsurv_offline_pcb_footprints
+25x18_825nH
+
+
+0
+4
+2
+unsurv_offline_pcb_footprints
+25x18_1016nH
+
+
+0
+4
+2
+unsurv_offline_pcb_footprints
 35_18_1_9nH
 
 
@@ -101297,6 +101311,20 @@ CHS-01TA
 2
 2
 unsurv_offline_pcb_footprints
+CONSMA024-G
+
+
+0
+3
+2
+unsurv_offline_pcb_footprints
+CR32
+
+
+0
+2
+2
+unsurv_offline_pcb_footprints
 DF-12-20DP
 
 
@@ -101332,6 +101360,13 @@ DLP11SN900HL2L_hand_solder
 4
 4
 unsurv_offline_pcb_footprints
+FH34SRJ-18S-0.5SH
+
+
+0
+0
+0
+unsurv_offline_pcb_footprints
 GPS_Module_CAM-M8C-0
 
 
@@ -101350,8 +101385,8 @@ HT-CT62
 
 
 0
-0
-0
+22
+22
 unsurv_offline_pcb_footprints
 LPPB081NGCN-RC
 
@@ -101380,6 +101415,13 @@ NCP59800
 0
 9
 9
+unsurv_offline_pcb_footprints
+NTAG 5 link
+
+
+0
+16
+16
 unsurv_offline_pcb_footprints
 PogoPin_2_2mm_circular
 
@@ -101534,6 +101576,34 @@ circular_NFC_386uH_less_segments
 0
 2
 2
+unsurv_offline_pcb_footprints
+https___shop.unsurv.org
+
+
+0
+0
+0
+unsurv_offline_pcb_footprints
+shop_unsurv_org
+
+
+0
+0
+0
+unsurv_offline_pcb_footprints
+solar_2conn_solder
+
+
+0
+2
+2
+unsurv_offline_pcb_footprints
+testpoint_array_2x3
+SMD pad as test Point, diameter 1.0mm
+test point SMD pad
+0
+6
+6
 unsurv_offline_pcb_footprints
 ublox_SAM-M8Q_HandSolder
 GPS Module, 15.5x15.5x6.3mm, https://www.u-blox.com/sites/default/files/SAM-M8Q_HardwareIntegrationManual_%28UBX-16018358%29.pdf
