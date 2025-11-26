@@ -69,7 +69,8 @@ void setup()
   int temp = analogRead(18);
   */
 
-  int targetOS = OS_IOS;
+  // int targetOS = OS_IOS;
+  int targetOS = OS_ANDROID;
   #define TARGET_IOS
   // #define TARGET_ANDROID
 
@@ -94,10 +95,10 @@ void setup()
   // updateNFC(targetOS, "Temperature: " + String((temp.temperature * 9/5) + 32, 1) + " °F") ;
   
   // Celcius
-  // updateNFC(targetOS, "Temperature: " + String(temp.temperature, 1) + " °C") ;
+  updateNFC(targetOS, "Temperature: " + String(temp.temperature, 1) + " °C") ;
   
   // test
-  updateNFC(targetOS, "http://ha:8123/api/webhook/nfc-temp-value?temp=" + String(temp.temperature, 1));
+  // updateNFC(targetOS, "http://ha:8123/api/webhook/nfc-temp-value?temp=" + String(temp.temperature, 1));
 
 
   // RF430CL330H_Shield nfc(IRQ, RESET);

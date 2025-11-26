@@ -190,7 +190,7 @@ void setupNFC()
                                                                                            
   };
 
-    byte nfcTemplateStatic_correct[] = {
+    byte nfcTemplateStatic[] = {
   /*NDEF Tag Application Name*/                                                           \
   0xD2, 0x76, 0x00, 0x00, 0x85, 0x01, 0x01,                                               \
                                                                                           \
@@ -209,7 +209,7 @@ void setupNFC()
                                                                                                                                                                              
   };
 
-      byte nfcTemplateStatic[] = {
+      byte nfcTemplateStatic_iOS[] = {
   /*NDEF Tag Application Name*/                                                           \
   0xD2, 0x76, 0x00, 0x00, 0x85, 0x01, 0x01,                                               \
                                                                                           \
@@ -300,7 +300,7 @@ void updateNFC(int osType, String nfcString)
     };
   }
 
-  byte NDEFfieldsLength[] = {
+  byte NDEFfieldsLength_iOS[] = {
       // NDEF File body starts immediately after CC file
       0x00, 0x00, /* NLEN = bytes after this */                                     
       0xD1,       /* Record Header (MB=1, ME=1, CF=0, SR=1, IL=0, TNF=0x01) */                                                              
@@ -308,6 +308,16 @@ void updateNFC(int osType, String nfcString)
       0x00,       /* Payload Length = bytes after this -1(will be updated) */                                              
       0x55,       /* Type = URI */                                                             
       0x00,
+    };
+ byte NDEFfieldsLength[] = {
+    /* NDEF File for Hello World */                                                        
+      0x00, 0x00, /* NLEN; NDEF length will be updated */                                     
+      0xD1,       /* Record Header (MB=1, ME=1, CF=0, SR=1, IL=0, TNF=0x01) */                                                              
+      0x01,       /* Type Length */                                                                 
+      0x00,       /* Payload Length (will be updated) */                                              
+      0x54,       /* Type: 'T' for text */                                                             
+      0x02,       /* Language Code Length */                                                                 
+      0x65, 0x6E  /* Language Code: 'en' */                                                             
     };
 
   // input

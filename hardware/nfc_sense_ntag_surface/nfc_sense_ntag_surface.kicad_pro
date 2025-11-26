@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.2,
-          "height": 0.4,
-          "width": 0.4
+          "drill": 0.762,
+          "height": 1.524,
+          "width": 1.524
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -48,8 +48,7 @@
         "silk_text_thickness": 0.125,
         "silk_text_upright": false,
         "zones": {
-          "45_degree_only": false,
-          "min_clearance": 0.508
+          "min_clearance": 0.2
         }
       },
       "diff_pair_dimensions": [
@@ -59,7 +58,13 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "clearance|129818750|39906250|223136bd-2580-4d13-92b3-28b0b4aa8d4e|f6b11baa-27ea-4696-abef-5ca8ff4098a0",
+        "copper_edge_clearance|138375000|56675000|8dd1c82d-735d-43e5-85e9-8a60528c308d|b28d8f48-0e69-416d-8bc0-406444f20346",
+        "shorting_items|136575000|54875000|b28d8f48-0e69-416d-8bc0-406444f20346|861cb034-d5b6-40db-8aae-5474e0e48f47",
+        "text_height|127300000|45700000|f4786ac5-3a4c-4886-ad5e-25b0dedb9954|00000000-0000-0000-0000-000000000000",
+        "text_height|131400000|45700000|4837fe64-2f5e-47fb-a844-a921867a05ad|00000000-0000-0000-0000-000000000000"
+      ],
       "meta": {
         "version": 2
       },
@@ -113,12 +118,9 @@
         "unconnected_items": "error",
         "unresolved_variable": "error",
         "via_dangling": "warning",
-        "zone_has_empty_net": "error",
         "zones_intersect": "error"
       },
       "rules": {
-        "allow_blind_buried_vias": false,
-        "allow_microvias": false,
         "max_error": 0.005,
         "min_clearance": 0.125,
         "min_connection": 0.0,
@@ -135,8 +137,6 @@
         "min_track_width": 0.2,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.45,
-        "solder_mask_clearance": 0.0,
-        "solder_mask_min_width": 0.0,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
@@ -224,8 +224,7 @@
           "drill": 0.25
         }
       ],
-      "zones_allow_external_fillets": false,
-      "zones_use_no_outline": true
+      "zones_allow_external_fillets": false
     },
     "ipc2581": {
       "dist": "",
@@ -419,7 +418,6 @@
     "rule_severities": {
       "bus_definition_conflict": "error",
       "bus_entry_needed": "error",
-      "bus_label_syntax": "error",
       "bus_to_bus_conflict": "error",
       "bus_to_net_conflict": "error",
       "conflicting_netclasses": "error",
@@ -458,7 +456,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "pocket_knife_sense_display.kicad_pro",
+    "filename": "nfc_sense_ntag_surface.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -513,9 +511,9 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "nfc_sense.step",
+      "step": "nfc_sense_ntag.step",
       "svg": "",
-      "vrml": "nfc_sense.wrl"
+      "vrml": ""
     },
     "page_layout_descr_file": ""
   },
@@ -571,71 +569,11 @@
           "label": "DNP",
           "name": "${DNP}",
           "show": true
-        },
-        {
-          "group_by": false,
-          "label": "#",
-          "name": "${ITEM_NUMBER}",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Category",
-          "name": "Category",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "DK_Datasheet_Link",
-          "name": "DK_Datasheet_Link",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "DK_Detail_Page",
-          "name": "DK_Detail_Page",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Digi-Key_PN",
-          "name": "Digi-Key_PN",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Family",
-          "name": "Family",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "MPN",
-          "name": "MPN",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Manufacturer",
-          "name": "Manufacturer",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Status",
-          "name": "Status",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Description",
-          "name": "Description",
-          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
-      "name": "",
+      "name": "Grouped By Value",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -667,18 +605,8 @@
       "version": 1
     },
     "net_format_name": "",
-    "ngspice": {
-      "fix_include_paths": true,
-      "fix_passive_vals": false,
-      "meta": {
-        "version": 0
-      },
-      "model_mode": 0,
-      "workbook_filename": ""
-    },
     "page_layout_descr_file": "",
     "plot_directory": "",
-    "spice_adjust_passive_values": false,
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
