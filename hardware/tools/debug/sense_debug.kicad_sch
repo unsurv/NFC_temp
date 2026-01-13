@@ -6263,7 +6263,7 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 76.2) (xy 193.04 76.2)
+			(xy 184.15 72.39) (xy 187.96 72.39)
 		)
 		(stroke
 			(width 0)
@@ -7253,7 +7253,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 78.74) (xy 193.04 86.36)
+			(xy 187.96 74.93) (xy 187.96 82.55)
 		)
 		(stroke
 			(width 0)
@@ -7310,6 +7310,16 @@
 			(type default)
 		)
 		(uuid "ef6b7472-cbdd-4b5c-bbb8-1275e79323ee")
+	)
+	(wire
+		(pts
+			(xy 138.43 181.61) (xy 138.43 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef92eb79-b8a7-4ec3-81b1-3ba21fd41a7b")
 	)
 	(wire
 		(pts
@@ -7411,7 +7421,7 @@
 		)
 		(uuid "ff2b47c9-6f70-4241-a4a8-58567e87bf37")
 	)
-	(text "TODO\n- connect SPI for display\n- power harvesting conn\n- PH super / hybrid cap\n- power rail jumpers\n- particle sensor conn\n- external debug conn\n\n"
+	(text "TODO\n- connect SPI for display\n- power harvesting conn\n- PH super / hybrid cap\n- power rail jumpers\n- particle sensor conn\n- external debug conn\n\n\n- SERIAL CONN OUT!!!\n\n"
 		(exclude_from_sim no)
 		(at 134.366 115.316 0)
 		(effects
@@ -7731,7 +7741,7 @@
 	)
 	(global_label "VBAT"
 		(shape input)
-		(at 189.23 76.2 180)
+		(at 184.15 72.39 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7741,7 +7751,7 @@
 		)
 		(uuid "37f582e0-b41f-4377-a3d9-2bee5aff94ca")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.83 76.2 0)
+			(at 176.75 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7984,6 +7994,28 @@
 		(uuid "51d315e8-2c97-47be-97d1-1b6c24ea12b4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 83.82 30.8209 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TX"
+		(shape input)
+		(at 135.89 182.88 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "53d923a9-d830-47b2-9256-445415aa3cd7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 135.89 177.7177 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8389,28 +8421,6 @@
 			)
 		)
 	)
-	(global_label "VLDO"
-		(shape input)
-		(at 101.6 101.6 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "899cf863-d0cf-4853-9165-4e0f547caea2")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 101.6 109.3024 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "SDI"
 		(shape input)
 		(at 33.02 168.91 180)
@@ -8539,28 +8549,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "VIN"
-		(shape input)
-		(at 99.06 101.6 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "aa73ef29-deb0-43f7-b994-5c28960bd77c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 99.06 107.6091 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -8939,6 +8927,28 @@
 			)
 		)
 	)
+	(global_label "RX"
+		(shape input)
+		(at 133.35 182.88 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ee7c087b-fefb-401c-8d6c-f97e4d2d02a4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 133.35 177.4153 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "SCL"
 		(shape input)
 		(at 181.61 62.23 0)
@@ -9110,6 +9120,73 @@
 			(project "sense_debug"
 				(path "/c54e1377-ff88-4224-9c85-352a20bf3450"
 					(reference "#PWR029")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 138.43 181.61 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "08e25677-71ca-4943-8e6e-b6e396d9ef7a")
+		(property "Reference" "#PWR045"
+			(at 144.78 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 141.605 181.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 138.43 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 138.43 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 138.43 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aa0b935f-c7d6-405c-b194-3ccf5094353c")
+		)
+		(instances
+			(project "sense_debug"
+				(path "/c54e1377-ff88-4224-9c85-352a20bf3450"
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -10223,7 +10300,7 @@
 	)
 	(symbol
 		(lib_id "dk_Rectangular-Connectors-Headers-Male-Pins:B2B-PH-SM4-TB_LF__SN_")
-		(at 195.58 78.74 90)
+		(at 190.5 74.93 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10232,7 +10309,7 @@
 		(fields_autoplaced yes)
 		(uuid "267be71d-7d82-4f8c-b476-393ba3b9fbbd")
 		(property "Reference" "J6"
-			(at 198.755 76.2578 90)
+			(at 193.675 72.4478 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10241,7 +10318,7 @@
 			)
 		)
 		(property "Value" "B2B-PH-SM4-TB_LF__SN_"
-			(at 198.755 78.6821 90)
+			(at 193.675 74.8721 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10250,7 +10327,7 @@
 			)
 		)
 		(property "Footprint" "unsurv_offline_pcb_footprints:solar_2conn_solder"
-			(at 190.5 73.66 0)
+			(at 185.42 69.85 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10260,7 +10337,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
-			(at 187.96 73.66 0)
+			(at 182.88 69.85 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10270,7 +10347,7 @@
 			)
 		)
 		(property "Description" "CONN HEADER SMD 2POS 2MM"
-			(at 195.58 78.74 0)
+			(at 190.5 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10279,7 +10356,7 @@
 			)
 		)
 		(property "Digi-Key_PN" "455-1734-1-ND"
-			(at 185.42 73.66 0)
+			(at 180.34 69.85 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10289,7 +10366,7 @@
 			)
 		)
 		(property "MPN" "B2B-PH-SM4-TB(LF)(SN)"
-			(at 182.88 73.66 0)
+			(at 177.8 69.85 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10299,7 +10376,7 @@
 			)
 		)
 		(property "Category" "Connectors, Interconnects"
-			(at 180.34 73.66 0)
+			(at 175.26 69.85 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10309,7 +10386,7 @@
 			)
 		)
 		(property "Family" "Rectangular Connectors - Headers, Male Pins"
-			(at 177.8 73.66 0)
+			(at 172.72 69.85 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10319,7 +10396,7 @@
 			)
 		)
 		(property "DK_Datasheet_Link" "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
-			(at 175.26 73.66 0)
+			(at 170.18 69.85 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10329,7 +10406,7 @@
 			)
 		)
 		(property "DK_Detail_Page" "/product-detail/en/jst-sales-america-inc/B2B-PH-SM4-TB(LF)(SN)/455-1734-1-ND/926831"
-			(at 172.72 73.66 0)
+			(at 167.64 69.85 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10339,7 +10416,7 @@
 			)
 		)
 		(property "Description_1" "CONN HEADER SMD 2POS 2MM"
-			(at 170.18 73.66 0)
+			(at 165.1 69.85 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10349,7 +10426,7 @@
 			)
 		)
 		(property "Manufacturer" "JST Sales America Inc."
-			(at 167.64 73.66 0)
+			(at 162.56 69.85 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10359,7 +10436,7 @@
 			)
 		)
 		(property "Status" "Active"
-			(at 165.1 73.66 0)
+			(at 160.02 69.85 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -11136,7 +11213,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 193.04 86.36 0)
+		(at 187.96 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11145,7 +11222,7 @@
 		(fields_autoplaced yes)
 		(uuid "5d181103-58e2-4547-8891-af1d7cd2a183")
 		(property "Reference" "#PWR036"
-			(at 193.04 92.71 0)
+			(at 187.96 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11154,7 +11231,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 193.04 90.4931 0)
+			(at 187.96 86.6831 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11162,7 +11239,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 193.04 86.36 0)
+			(at 187.96 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11171,7 +11248,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 193.04 86.36 0)
+			(at 187.96 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11180,7 +11257,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 193.04 86.36 0)
+			(at 187.96 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11900,6 +11977,77 @@
 			(project ""
 				(path "/c54e1377-ff88-4224-9c85-352a20bf3450"
 					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x03_Pin")
+		(at 135.89 187.96 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6da8907c-143a-42c4-9515-a850e10b7092")
+		(property "Reference" "J7"
+			(at 135.89 189.6293 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x03_Pin"
+			(at 135.89 192.0536 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+			(at 135.89 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 135.89 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x03, script generated"
+			(at 135.89 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "1982cc8a-b545-4cc6-8117-5ad8addeef4c")
+		)
+		(pin "1"
+			(uuid "c91ed48c-e5e9-4430-8912-0d65bab43422")
+		)
+		(pin "2"
+			(uuid "17183c3e-15b2-4958-83f0-0f2cf41fd439")
+		)
+		(instances
+			(project "sense_debug"
+				(path "/c54e1377-ff88-4224-9c85-352a20bf3450"
+					(reference "J7")
 					(unit 1)
 				)
 			)
@@ -13611,15 +13759,15 @@
 	(symbol
 		(lib_id "Device:C_Small")
 		(at 129.54 45.72 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "a65e497c-8d0e-4872-8477-78023a07d9b3")
 		(property "Reference" "C17"
-			(at 131.8641 44.5141 0)
+			(at 127.2159 44.5141 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13628,7 +13776,7 @@
 			)
 		)
 		(property "Value" "470nF"
-			(at 131.8641 46.9384 0)
+			(at 127.2159 46.9384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15917,16 +16065,16 @@
 	)
 	(symbol
 		(lib_id "Diode:MBR0530")
-		(at 191.77 127 180)
+		(at 191.77 127 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "f64f6bd2-ed27-4c65-8efb-b95fa2e7d271")
 		(property "Reference" "D2"
-			(at 192.0875 121.5855 0)
+			(at 191.4525 121.5855 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15934,7 +16082,7 @@
 			)
 		)
 		(property "Value" "MBR0530"
-			(at 192.0875 124.0098 0)
+			(at 191.4525 124.0098 0)
 			(effects
 				(font
 					(size 1.27 1.27)
