@@ -5864,7 +5864,7 @@
 		(uuid "2169fb05-72c0-4fb9-ad0c-f6e44b370422")
 	)
 	(junction
-		(at 22.86 149.86)
+		(at 22.86 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "26cbce52-291b-4725-8c09-b6e67ab5a9e7")
@@ -6183,7 +6183,7 @@
 	)
 	(wire
 		(pts
-			(xy 17.78 149.86) (xy 22.86 149.86)
+			(xy 17.78 139.7) (xy 22.86 139.7)
 		)
 		(stroke
 			(width 0)
@@ -6263,7 +6263,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 72.39) (xy 187.96 72.39)
+			(xy 190.5 81.28) (xy 194.31 81.28)
 		)
 		(stroke
 			(width 0)
@@ -7003,7 +7003,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 149.86) (xy 27.94 149.86)
+			(xy 22.86 139.7) (xy 27.94 139.7)
 		)
 		(stroke
 			(width 0)
@@ -7253,7 +7253,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 74.93) (xy 187.96 82.55)
+			(xy 194.31 83.82) (xy 194.31 91.44)
 		)
 		(stroke
 			(width 0)
@@ -7421,7 +7421,7 @@
 		)
 		(uuid "ff2b47c9-6f70-4241-a4a8-58567e87bf37")
 	)
-	(text "TODO\n- connect SPI for display\n- power harvesting conn\n- PH super / hybrid cap\n- power rail jumpers\n- particle sensor conn\n- external debug conn\n\n\n- SERIAL CONN OUT!!!\n\n"
+	(text "TODO\n\n- storage caps in power line\n- test serial conn\n- test energy harvesting\n- label conns"
 		(exclude_from_sim no)
 		(at 134.366 115.316 0)
 		(effects
@@ -7741,7 +7741,7 @@
 	)
 	(global_label "VBAT"
 		(shape input)
-		(at 184.15 72.39 180)
+		(at 190.5 81.28 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7751,7 +7751,7 @@
 		)
 		(uuid "37f582e0-b41f-4377-a3d9-2bee5aff94ca")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 176.75 72.39 0)
+			(at 183.1 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8423,7 +8423,7 @@
 	)
 	(global_label "SDI"
 		(shape input)
-		(at 33.02 168.91 180)
+		(at 33.02 173.99 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8433,7 +8433,7 @@
 		)
 		(uuid "8c014678-baf1-4fbc-9977-53b6b92328f0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 26.9505 168.91 0)
+			(at 26.9505 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8555,7 +8555,7 @@
 	)
 	(global_label "SDA"
 		(shape input)
-		(at 27.94 157.48 270)
+		(at 27.94 147.32 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8565,7 +8565,7 @@
 		)
 		(uuid "b0c20349-8989-4e34-9417-c2a0abecd876")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 28.0194 163.4612 90)
+			(at 28.0194 153.3012 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8731,7 +8731,7 @@
 	)
 	(global_label "SCLK"
 		(shape input)
-		(at 33.02 171.45 180)
+		(at 33.02 168.91 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8741,7 +8741,7 @@
 		)
 		(uuid "c930f8f8-3404-4b80-ba48-7ceade0bfa78")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 25.2572 171.45 0)
+			(at 25.2572 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8753,7 +8753,7 @@
 	)
 	(global_label "SCL"
 		(shape input)
-		(at 17.78 157.48 270)
+		(at 17.78 147.32 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8763,7 +8763,7 @@
 		)
 		(uuid "caa1c398-c78c-4cbf-a231-36273f6aacc0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 17.8594 163.4007 90)
+			(at 17.8594 153.2407 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8896,6 +8896,28 @@
 		(uuid "e2f9382b-f1cc-4d14-8d57-d0d471cf2708")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 255.0063 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SDO"
+		(shape input)
+		(at 33.02 171.45 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "eae6f5fb-5700-43a2-9f85-0993ed622129")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 26.2248 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10171,7 +10193,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1uF"
+		(property "Value" "4.7 uF"
 			(at 203.962 133.096 0)
 			(effects
 				(font
@@ -10300,7 +10322,7 @@
 	)
 	(symbol
 		(lib_id "dk_Rectangular-Connectors-Headers-Male-Pins:B2B-PH-SM4-TB_LF__SN_")
-		(at 190.5 74.93 90)
+		(at 196.85 83.82 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10309,7 +10331,7 @@
 		(fields_autoplaced yes)
 		(uuid "267be71d-7d82-4f8c-b476-393ba3b9fbbd")
 		(property "Reference" "J6"
-			(at 193.675 72.4478 90)
+			(at 200.025 81.3378 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10318,7 +10340,7 @@
 			)
 		)
 		(property "Value" "B2B-PH-SM4-TB_LF__SN_"
-			(at 193.675 74.8721 90)
+			(at 200.025 83.7621 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10327,7 +10349,7 @@
 			)
 		)
 		(property "Footprint" "unsurv_offline_pcb_footprints:solar_2conn_solder"
-			(at 185.42 69.85 0)
+			(at 191.77 78.74 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10337,7 +10359,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
-			(at 182.88 69.85 0)
+			(at 189.23 78.74 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10347,7 +10369,7 @@
 			)
 		)
 		(property "Description" "CONN HEADER SMD 2POS 2MM"
-			(at 190.5 74.93 0)
+			(at 196.85 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10356,7 +10378,7 @@
 			)
 		)
 		(property "Digi-Key_PN" "455-1734-1-ND"
-			(at 180.34 69.85 0)
+			(at 186.69 78.74 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10366,7 +10388,7 @@
 			)
 		)
 		(property "MPN" "B2B-PH-SM4-TB(LF)(SN)"
-			(at 177.8 69.85 0)
+			(at 184.15 78.74 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10376,7 +10398,7 @@
 			)
 		)
 		(property "Category" "Connectors, Interconnects"
-			(at 175.26 69.85 0)
+			(at 181.61 78.74 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10386,7 +10408,7 @@
 			)
 		)
 		(property "Family" "Rectangular Connectors - Headers, Male Pins"
-			(at 172.72 69.85 0)
+			(at 179.07 78.74 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10396,7 +10418,7 @@
 			)
 		)
 		(property "DK_Datasheet_Link" "http://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
-			(at 170.18 69.85 0)
+			(at 176.53 78.74 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10406,7 +10428,7 @@
 			)
 		)
 		(property "DK_Detail_Page" "/product-detail/en/jst-sales-america-inc/B2B-PH-SM4-TB(LF)(SN)/455-1734-1-ND/926831"
-			(at 167.64 69.85 0)
+			(at 173.99 78.74 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10416,7 +10438,7 @@
 			)
 		)
 		(property "Description_1" "CONN HEADER SMD 2POS 2MM"
-			(at 165.1 69.85 0)
+			(at 171.45 78.74 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10426,7 +10448,7 @@
 			)
 		)
 		(property "Manufacturer" "JST Sales America Inc."
-			(at 162.56 69.85 0)
+			(at 168.91 78.74 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10436,7 +10458,7 @@
 			)
 		)
 		(property "Status" "Active"
-			(at 160.02 69.85 0)
+			(at 166.37 78.74 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -11010,7 +11032,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 27.94 153.67 0)
+		(at 27.94 143.51 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11019,7 +11041,7 @@
 		(fields_autoplaced yes)
 		(uuid "54a00c48-93b9-47e9-8042-233a43c2c837")
 		(property "Reference" "R2"
-			(at 29.718 152.8353 0)
+			(at 29.718 142.6753 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11028,7 +11050,7 @@
 			)
 		)
 		(property "Value" "4.7k"
-			(at 29.718 155.3722 0)
+			(at 29.718 145.2122 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11037,7 +11059,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 26.162 153.67 90)
+			(at 26.162 143.51 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11046,7 +11068,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 27.94 153.67 0)
+			(at 27.94 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11055,7 +11077,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 27.94 153.67 0)
+			(at 27.94 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11213,7 +11235,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 187.96 82.55 0)
+		(at 194.31 91.44 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11222,7 +11244,7 @@
 		(fields_autoplaced yes)
 		(uuid "5d181103-58e2-4547-8891-af1d7cd2a183")
 		(property "Reference" "#PWR036"
-			(at 187.96 88.9 0)
+			(at 194.31 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11231,7 +11253,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 187.96 86.6831 0)
+			(at 194.31 95.5731 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11239,7 +11261,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 187.96 82.55 0)
+			(at 194.31 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11248,7 +11270,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 187.96 82.55 0)
+			(at 194.31 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11257,7 +11279,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 187.96 82.55 0)
+			(at 194.31 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11918,7 +11940,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 22.86 149.86 0)
+		(at 22.86 139.7 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11927,7 +11949,7 @@
 		(fields_autoplaced yes)
 		(uuid "6d49dad5-ea06-4d39-9984-0212ae848129")
 		(property "Reference" "#PWR017"
-			(at 22.86 153.67 0)
+			(at 22.86 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11936,7 +11958,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 22.86 146.2842 0)
+			(at 22.86 136.1242 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11944,7 +11966,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 22.86 149.86 0)
+			(at 22.86 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11953,7 +11975,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 22.86 149.86 0)
+			(at 22.86 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11962,7 +11984,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 22.86 149.86 0)
+			(at 22.86 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12753,7 +12775,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 17.78 153.67 0)
+		(at 17.78 143.51 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12762,7 +12784,7 @@
 		(fields_autoplaced yes)
 		(uuid "8eec64b7-5fc9-4d43-a498-c54def926897")
 		(property "Reference" "R1"
-			(at 19.558 152.8353 0)
+			(at 19.558 142.6753 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12771,7 +12793,7 @@
 			)
 		)
 		(property "Value" "4.7k"
-			(at 19.558 155.3722 0)
+			(at 19.558 145.2122 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12780,7 +12802,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 16.002 153.67 90)
+			(at 16.002 143.51 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12789,7 +12811,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 17.78 153.67 0)
+			(at 17.78 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12798,7 +12820,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 17.78 153.67 0)
+			(at 17.78 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16066,7 +16088,7 @@
 	(symbol
 		(lib_id "Diode:MBR0530")
 		(at 191.77 127 0)
-		(mirror x)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16074,7 +16096,7 @@
 		(dnp no)
 		(uuid "f64f6bd2-ed27-4c65-8efb-b95fa2e7d271")
 		(property "Reference" "D2"
-			(at 191.4525 121.5855 0)
+			(at 192.0875 132.4145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16082,7 +16104,7 @@
 			)
 		)
 		(property "Value" "MBR0530"
-			(at 191.4525 124.0098 0)
+			(at 192.0875 129.9902 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16090,7 +16112,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 191.77 122.555 0)
+			(at 191.77 131.445 0)
 			(effects
 				(font
 					(size 1.27 1.27)
