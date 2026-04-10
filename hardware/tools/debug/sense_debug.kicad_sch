@@ -7421,7 +7421,7 @@
 		)
 		(uuid "ff2b47c9-6f70-4241-a4a8-58567e87bf37")
 	)
-	(text "TODO\n\n- storage caps in power line\n- test serial conn\n- test energy harvesting\n- label conns"
+	(text "TODO\n\n- storage caps in power line\n- test serial conn\n- test energy harvesting\n- switch FPS conn orientation\n- label conns"
 		(exclude_from_sim no)
 		(at 134.366 115.316 0)
 		(effects
