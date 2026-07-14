@@ -1,34 +1,127 @@
-#include <ntagsramadapter.h>
+#include <ntageepromadapter.h>
+#include "NdefMessage.h"
 #include "Arduino.h"
 #define HARDI2C
 #include <Wire.h>
 
+#include <avr/sleep.h>
+
+#include <Adafruit_TMP117.h>
+#include <Adafruit_Sensor.h>
+
+bool postData = false;
+Adafruit_TMP117  tmp117;
+
 Ntag ntag(Ntag::NTAG_I2C_1K, 0x54);
-NtagSramAdapter ntagAdapter(&ntag);
+NtagEepromAdapter ntagEepromAdapter(&ntag);
 
 void setup(){
-    Serial.begin(115200);
-    
+
+  // TODO add check if NTAG is in I2C master mode. if in master mode. go to sleep.
+  // Serial.begin(115200);
+    // Serial.begin(9600);
+
+  // ntag.lockEepromToI2c();
+  // power saving
+  TCA0.SPLIT.CTRLA = 0;
+  ADCPowerOptions(ADC_DISABLE);
+
+  pinMode(0, OUTPUT);
+  pinMode(1, OUTPUT);
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+
+  pinMode(5, OUTPUT);
+  
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(13, OUTPUT);
+  pinMode(14, OUTPUT);
+  pinMode(15, OUTPUT);
+  pinMode(16, OUTPUT);
+  
+  /*
+  pinMode(17, OUTPUT);
+  pinMode(19, OUTPUT);
+  pinMode(20, OUTPUT);
+  */
+
+
+  Wire.begin();
+
+  if (!tmp117.begin()) {
+    // updateNFC(targetOS, "TMP117 not found. Aborting...");
+    Serial.println("TMP117 not found");
+  }
+  else
+  {
+
+  sensors_event_t temp; // create an empty event to be filled
+  tmp117.getEvent(&temp); //fill the empty event object with the current measurements
+
+  NdefMessage message = NdefMessage();
+  // message.addUriRecord("http://123");
+  // message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/temp=" + String(temp.temperature, 1) + "C");
+  message.addEmptyRecord();
+  ntagEepromAdapter.writeMod(message);
+  
+  // ntag.unlockEeprom();
+  }
+  
+
+  // Before sleeping
+  /*
+  ADC0.CTRLA &= ~ADC_ENABLE_bm; // Very important on the tinyAVR 2-series
+  
+  set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+  sleep_enable();
+  sleep_cpu();
+  */
+
+  tmp117.setMeasurementMode(TMP117_MODE_ONE_SHOT);
 }
 
 void loop(){
+  /*
     Serial.println("start");
     if(!ntag.begin()){
         Serial.println("Can't find ntag");
     }
-    getSerialNumber();
-    testUserMem();
+    */
+    // getSerialNumber();
+    // testWriteAdapter();
+    // testUserMem();
+    
     // testRegisterAccess();
     // testSramMirror();
     // testSram();
 
-    delay(1000);
+    // delay(5000);
+
+    sensors_event_t temp; // create an empty event to be filled
+    tmp117.reset();
+    tmp117.getEvent(&temp); //fill the empty event object with the current measurements
+    // ntag.lockEepromToI2c();
+    NdefMessage message = NdefMessage();
+    // message.addUriRecord("http://123");
+    message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/temp=" + String(temp.temperature, 1) + "C");
+    ntagEepromAdapter.writeMod(message);
+    // ntag.unlockEeprom();
+
+    // Serial.println(String(temp.temperature, 1) + "C");
+    delay(250);
 }
 
 void testWriteAdapter(){
     NdefMessage message = NdefMessage();
-    message.addUriRecord("http://www.google.be");
-    if(ntagAdapter.write(message)){
+    // message.addUriRecord("http://123");
+    message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/temp=23.9C");
+    if(ntagEepromAdapter.writeMod(message)){
         Serial.println("Message written to tag.");
     }
 }
@@ -99,28 +192,30 @@ void getSerialNumber(){
 }
 
 void testUserMem(){
-    byte eepromdata[2*16];
-    byte readeeprom[16];
+    int writeLength = 20;
+    int readLength = 40;
+    byte eepromdata[writeLength];
+    byte readeeprom[readLength];
 
-    for(byte i=0;i<2*16;i++){
+    for(byte i=0;i<writeLength;i++){
         eepromdata[i]=0x80 | i;
     }
     
-    
+    /*
     Serial.println("Writing block 1");
-    if(!ntag.writeEeprom(0,eepromdata,16)){
+    if(!ntag.writeEepromMod(0x0000,eepromdata,writeLength)){
         Serial.println("Write block 1 failed");
     }
     
-    /*
+    
     Serial.println("Writing block 2");
     if(!ntag.writeEeprom(16,eepromdata+16,16)){
         Serial.println("Write block 2 failed");
     }*/
     
     Serial.println("\nReading memory block 1");
-    if(ntag.readEepromMod(0x0006,readeeprom,4)){
-        showBlockInHex(readeeprom,4);
+    if(ntag.readEepromMod(0x0000,readeeprom,readLength)){
+        showBlockInHex(readeeprom,readLength);
     }
     /*
     Serial.println("Reading memory block 2");

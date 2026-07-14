@@ -771,7 +771,7 @@
       {
         "filename": "sense_debug.kicad_sch",
         "name": "sense_debug",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "c54e1377-ff88-4224-9c85-352a20bf3450"
       }
     ],
     "used_designators": "",
@@ -780,7 +780,7 @@
   "sheets": [
     [
       "c54e1377-ff88-4224-9c85-352a20bf3450",
-      "Root"
+      "sense_debug"
     ]
   ],
   "text_variables": {},
