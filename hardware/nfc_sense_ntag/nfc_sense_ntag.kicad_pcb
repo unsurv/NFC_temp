@@ -10675,7 +10675,7 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "acc: 0.1    0.2    0.4  °C"
+	(gr_text "acc: 0.1    0.2    0.3  °C"
 		(at 129.642592 32.51 0)
 		(layer "B.SilkS")
 		(uuid "5de399c8-e2f2-4310-abbd-45e8a5026a87")
@@ -12689,7 +12689,7 @@
 		)
 	)
 	(group ""
-		(uuid "e1b5155b-f4f7-47e3-86a2-412296852d23")
+		(uuid "fde9ce05-8d3e-48b8-a4a6-f5ea687a066f")
 		(members "5de399c8-e2f2-4310-abbd-45e8a5026a87" "94731c39-0723-4b2c-bf7a-66bea2abfee1")
 	)
 	(embedded_fonts no)
