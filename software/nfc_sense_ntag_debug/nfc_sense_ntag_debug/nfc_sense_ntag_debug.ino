@@ -17,10 +17,11 @@ NtagEepromAdapter ntagEepromAdapter(&ntag);
 
 void setup(){
 
+  // RTC.CTRLA |= (0x28);
+  
   // TODO add check if NTAG is in I2C master mode. if in master mode. go to sleep.
-  // Serial.begin(115200);
-    // Serial.begin(9600);
-
+  Serial.begin(9600);
+  Wire.begin();
   // ntag.lockEepromToI2c();
   // power saving
   TCA0.SPLIT.CTRLA = 0;
@@ -49,10 +50,20 @@ void setup(){
   pinMode(17, OUTPUT);
   pinMode(19, OUTPUT);
   pinMode(20, OUTPUT);
+  
+
+  // can't do too much computation before the actual ndef msg creation or we are too slow
+  if (!getSerialNumber()) {
+    // memory access is not possible when in i2c master mode
+    Serial.println("access not possible, assuming master mode goto sleep");
+    // goto sleep
+    ADC0.CTRLA &= ~ADC_ENABLE_bm; // Very important on the tinyAVR 2-series
+    set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+    sleep_enable();
+    sleep_cpu();
+  
+    }
   */
-
-
-  Wire.begin();
 
   if (!tmp117.begin()) {
     // updateNFC(targetOS, "TMP117 not found. Aborting...");
@@ -60,15 +71,14 @@ void setup(){
   }
   else
   {
-
   sensors_event_t temp; // create an empty event to be filled
   tmp117.getEvent(&temp); //fill the empty event object with the current measurements
-
+  
   NdefMessage message = NdefMessage();
   // message.addUriRecord("http://123");
   // message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/temp=" + String(temp.temperature, 1) + "C");
-  message.addEmptyRecord();
-  ntagEepromAdapter.writeMod(message);
+  // message.addEmptyRecord();
+  // ntagEepromAdapter.writeMod(message);
   
   // ntag.unlockEeprom();
   }
@@ -110,11 +120,32 @@ void loop(){
     NdefMessage message = NdefMessage();
     // message.addUriRecord("http://123");
     message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/temp=" + String(temp.temperature, 1) + "C");
+    Serial.println("127.0.0.1/temp=" + String(temp.temperature, 1) + "C");
+    ntag.releaseI2c();
     ntagEepromAdapter.writeMod(message);
     // ntag.unlockEeprom();
 
     // Serial.println(String(temp.temperature, 1) + "C");
-    delay(250);
+
+    // getEnergyHarvestingStatus();
+    delay(500);
+    
+}
+
+void getEnergyHarvestingStatus(){
+    byte* sn=(byte*)malloc(ntag.getHarvestingLength());
+    Serial.println();
+    if(ntag.getEnergyHarvestingStatus(sn,2))
+    {
+        Serial.print("Energy Harvesting Status is: ");
+        for(byte i=0;i<ntag.getUidLength();i++)
+        {
+            Serial.print(sn[i], HEX);
+            Serial.print(" ");
+        }
+    }
+    Serial.println();
+    free(sn);
 }
 
 void testWriteAdapter(){
@@ -175,7 +206,7 @@ void testRegisterAccess(){
     Serial.println(data,HEX);
 }
 
-void getSerialNumber(){
+bool getSerialNumber(){
     byte* sn=(byte*)malloc(ntag.getUidLength());
     Serial.println();
     if(ntag.getUid(sn,2))
@@ -186,9 +217,14 @@ void getSerialNumber(){
             Serial.print(sn[i], HEX);
             Serial.print(" ");
         }
+        free(sn);
+        return true;
+    } else {
+      free(sn);
+      return false;
     }
     Serial.println();
-    free(sn);
+    
 }
 
 void testUserMem(){
