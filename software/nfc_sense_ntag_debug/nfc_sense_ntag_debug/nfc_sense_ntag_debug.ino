@@ -1,41 +1,50 @@
 #include <ntageepromadapter.h>
 #include "NdefMessage.h"
 #include "Arduino.h"
+
 #define HARDI2C
 #include <Wire.h>
+#define HWire Wire
 
 #include <avr/sleep.h>
 
 // #define NFC_SENSE_DEBUG
 
-#include <Adafruit_TMP116.h>
-#include <Adafruit_TMP117.h>
-
-#include <Adafruit_Sensor.h>
+// #include <Adafruit_TMP116.h>
+// #include <Adafruit_TMP117.h>
+// #include <Adafruit_Sensor.h>
 
 // Adafruit_TMP116  tmpThermometer;
-Adafruit_TMP117  tmpThermometer;
+// Adafruit_TMP117  tmpThermometer;
+
+#include <7Semi_TMP11x.h>
+
+TMP11x_7Semi tmpThermometer(Wire);
 
 Ntag ntag(Ntag::NTAG_I2C_1K, 0x54);
 NtagEepromAdapter ntagEepromAdapter(&ntag);
 
 void setup(){
 
-  // RTC.CTRLA |= (0x28);
+  RTC.CTRLA |= (0x28);
   
-  // TODO add check if NTAG is in I2C master mode. if in master mode. go to sleep.
-  
-  ntagEepromAdapter.clean();
-  
-  #ifdef NFC_SENSE_DEBUG
-    Serial.begin(9600);
-  #endif
+  // TODO add check attiny eeprom if setup has been completed
 
-  Wire.begin();
+  /*
+  if eepromcheck == 0:
+    setup static ndef message
+  */
+  
+  // ntagEepromAdapter.clean();
+  #ifdef NFC_SENSE_DEBUG
+    Serial.begin(115200);
+  #endif
+  
+  HWire.begin();
+  HWire.setClock(400000);
   // power saving
   // TCA0.SPLIT.CTRLA = 0;
   // ADCPowerOptions(ADC_DISABLE);
-
 
   /*
   pinMode(0, OUTPUT);
@@ -56,40 +65,24 @@ void setup(){
   pinMode(14, OUTPUT);
   pinMode(15, OUTPUT);
   pinMode(16, OUTPUT);
-  
+
+
   pinMode(17, OUTPUT);
   pinMode(19, OUTPUT);
   pinMode(20, OUTPUT);
-
-  // can't do too much computation before the actual ndef msg creation or we are too slow
-  if (!getSerialNumber()) {
-    // memory access is not possible when in i2c master mode
-    Serial.println("access not possible, assuming master mode goto sleep");
-    // goto sleep
-    ADC0.CTRLA &= ~ADC_ENABLE_bm; // Very important on the tinyAVR 2-series
-    set_sleep_mode(SLEEP_MODE_PWR_DOWN);
-    sleep_enable();
-    sleep_cpu();
-  
-    }
-
   */
-  
-
-  if (!tmpThermometer.begin()) {
-    // updateNFC(targetOS, "TMP117 not found. Aborting...");
-      
+  /*
+  if (!tmpThermometer.begin()) {      
     #ifdef NFC_SENSE_DEBUG
       Serial.println("TMP thermometer not found aborting");
     #endif
-
 
     // NFC info if TMP not found
     NdefMessage message = NdefMessage();
     message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/ThermometerNotFound");
   
     // ntagEepromAdapter.clean();
-    ntag.releaseI2c();
+    //ntag.releaseI2c();
     ntagEepromAdapter.writeMod(message);
     
     // Before sleeping
@@ -101,20 +94,12 @@ void setup(){
   }
   else
   {
-  // sensors_event_t temp; // create an empty event to be filled
-  tmpThermometer.reset();
-  delay(5);
-  tmpThermometer.setMeasurementMode(TMP117_MODE_ONE_SHOT);
+  // tmpThermometer.reset();
+  // tmpThermometer.setMeasurementMode(TMP117_MODE_CONTINUOUS);
+  // tmpThermometer.setMeasurementMode(TMP117_MODE_ONE_SHOT);
+  // tmpThermometer.setAveragedSampleCount(TMP117_AVERAGE_1X);
+  
   sensors_event_t temp; // create an empty event to be filled
-
-  int i = 0;
-  while (!tmpThermometer.dataReady()) {
-    delay(1);
-    i++;
-  }
-  #ifdef NFC_SENSE_DEBUG
-    Serial.println(i);
-  #endif
   
   tmpThermometer.getEvent(&temp);
   
@@ -124,55 +109,65 @@ void setup(){
   // ntagEepromAdapter.clean();
   // ntag.releaseI2c();
   ntagEepromAdapter.writeMod(message);
-  #ifdef NFC_SENSE_DEBUG
-    Serial.println("127.0.0.1/temp=" + String(temp.temperature, 1) + "C");
-  #endif
-  
-  // tmpThermometer.getEvent(&temp); //fill the empty event object with the current measurements
-  // NdefMessage emptyMessage = NdefMessage();
-  // message.addUriRecord("http://123");
-  // message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/temp=" + String(temp.temperature, 1) + "C");
-  // emptyMessage.addEmptyRecord();
-  
-  // ntag.unlockEeprom();
-  }
+  // ntag.enableNfc();
+
+  }*/
+
+  tmpThermometer.begin(0x48);
+  tmpThermometer.setConversionRate(CONV_15P5MS);
+  tmpThermometer.setAveraging(AVG_NONE);
+  tmpThermometer.setMode(CONTINUOUS_0);
+
+  // NdefMessage message = NdefMessage();
+  // message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/temp=" + String(tC, 1) + "C");
+  // message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/temp=123C");
+  // message.addUrlRecordTemp(KNOWN_TYPE_HTTP, "127.0.0.1/temp=");
+  // ntagEepromAdapter.clean();
+  // ntagEepromAdapter.writeModIncreasedLen(message);
+
   
 
-  // Before sleeping
+  delay(18);
+  
+  float tC = 0.0f;
+  tmpThermometer.readTemperatureC(tC);
+  // message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/temp=" + String(tC, 1) + "C");
+  // ntagEepromAdapter.writeMod(message);
+  ntagEepromAdapter.writeTempMod(tC);
+}
+
+void loop(){
+  
   /*
+  delay(18);
+  
+  float tC = 0.0f;
+
+  tmpThermometer.readTemperatureC(tC);
+  
+  NdefMessage message = NdefMessage();
+  // message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/temp=" + String(tC, 1) + "C");
+  // message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/temp=123C");
+  // ntagEepromAdapter.clean();
+  ntagEepromAdapter.writeTempMod(tC);
+  
+  
+  
+  ntag.enableSram();
+  
+  ntag.setEnergyHarvesting();
+  delay(1000);
+  
+  */
+  // Before sleeping
   ADC0.CTRLA &= ~ADC_ENABLE_bm; // Very important on the tinyAVR 2-series
   
   set_sleep_mode(SLEEP_MODE_PWR_DOWN);
   sleep_enable();
   sleep_cpu();
-  */
-
   
 
-  
-}
-
-void loop(){
-
-  /*
-  sensors_event_t temp; // create an empty event to be filled
-
-  tmpThermometer.getEvent(&temp); //fill the empty event object with the current measurements
-
-  NdefMessage message = NdefMessage();
-  message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/temp=" + String(temp.temperature, 1) + "C");
-  
-  // ntagEepromAdapter.clean();
-  ntag.releaseI2c();
-  ntagEepromAdapter.writeMod(message);
-  #ifdef NFC_SENSE_DEBUG
-    Serial.println("127.0.0.1/temp=" + String(temp.temperature, 1) + "C");
-  #endif
-  
-  delay(250);
-  */
-  // getEnergyHarvestingStatus();
-    
+  delay(1000);
 }
 
 void getEnergyHarvestingStatus(){
