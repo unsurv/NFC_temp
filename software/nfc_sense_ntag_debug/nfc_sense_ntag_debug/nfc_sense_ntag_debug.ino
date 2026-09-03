@@ -7,6 +7,7 @@
 #define HWire Wire
 
 #include <avr/sleep.h>
+#include <EEPROM.h>
 
 // #define NFC_SENSE_DEBUG
 
@@ -24,24 +25,54 @@ TMP11x_7Semi tmpThermometer(Wire);
 Ntag ntag(Ntag::NTAG_I2C_1K, 0x54);
 NtagEepromAdapter ntagEepromAdapter(&ntag);
 
+bool getSetupStatus();
+void setupComplete(bool);
+
+
+// TODO check if negative values fuck up static len fields
+
 void setup(){
 
   RTC.CTRLA |= (0x28);
-  
-  // TODO add check attiny eeprom if setup has been completed
 
   /*
   if eepromcheck == 0:
     setup static ndef message
   */
+  HWire.begin();
+  HWire.setClock(400000);
   
   // ntagEepromAdapter.clean();
   #ifdef NFC_SENSE_DEBUG
     Serial.begin(115200);
+    // EEPROM.put(0, false);
   #endif
+
+  bool setupCompleted = getSetupStatus();
   
-  HWire.begin();
-  HWire.setClock(400000);
+  if (!setupCompleted) {
+ 
+    ntagEepromAdapter.clean();
+    delay(50);
+
+    NdefMessage message = NdefMessage();
+    message.addUrlRecordTemp(KNOWN_TYPE_HTTP, "127.0.0.1/t=");
+    bool messageWritten = ntagEepromAdapter.writeModIncreasedLen(message);
+
+    #ifdef NFC_SENSE_DEBUG
+      Serial.println("setup message status: " + String(messageWritten));
+    #endif
+
+    if (messageWritten) {
+      setupComplete(true);
+    }
+  } else {
+    #ifdef NFC_SENSE_DEBUG
+      Serial.println("setup already done");
+    #endif
+  }
+  
+
   // power saving
   // TCA0.SPLIT.CTRLA = 0;
   // ADCPowerOptions(ADC_DISABLE);
@@ -111,9 +142,18 @@ void setup(){
   ntagEepromAdapter.writeMod(message);
   // ntag.enableNfc();
 
-  }*/
+  }
+  */
+  
+  if(!tmpThermometer.begin(0x48)) {
+    
+    #ifdef NFC_SENSE_DEBUG
+      Serial.println("TMP boot not sucessful");
+    #endif
+  }
+ 
 
-  tmpThermometer.begin(0x48);
+  
   tmpThermometer.setConversionRate(CONV_15P5MS);
   tmpThermometer.setAveraging(AVG_NONE);
   tmpThermometer.setMode(CONTINUOUS_0);
@@ -121,16 +161,15 @@ void setup(){
   // NdefMessage message = NdefMessage();
   // message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/temp=" + String(tC, 1) + "C");
   // message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/temp=123C");
-  // message.addUrlRecordTemp(KNOWN_TYPE_HTTP, "127.0.0.1/temp=");
   // ntagEepromAdapter.clean();
-  // ntagEepromAdapter.writeModIncreasedLen(message);
-
-  
 
   delay(18);
   
   float tC = 0.0f;
   tmpThermometer.readTemperatureC(tC);
+  #ifdef NFC_SENSE_DEBUG
+      Serial.println("measured temp " + String(tC, 1));
+  #endif
   // message.addUrlRecord(KNOWN_TYPE_HTTP, "127.0.0.1/temp=" + String(tC, 1) + "C");
   // ntagEepromAdapter.writeMod(message);
   ntagEepromAdapter.writeTempMod(tC);
@@ -153,9 +192,7 @@ void loop(){
   
   
   
-  ntag.enableSram();
   
-  ntag.setEnergyHarvesting();
   delay(1000);
   
   */
@@ -168,6 +205,18 @@ void loop(){
   
 
   delay(1000);
+}
+
+void setupComplete(bool status) {
+  
+  EEPROM.put(0, status);
+
+}
+
+bool getSetupStatus() {
+  bool status;
+  EEPROM.get(0, status);
+  return status;
 }
 
 void getEnergyHarvestingStatus(){
