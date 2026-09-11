@@ -45,15 +45,21 @@ void setup(){
   // ntagEepromAdapter.clean();
   #ifdef NFC_SENSE_DEBUG
     Serial.begin(115200);
-    // EEPROM.put(0, false);
+    EEPROM.put(0, false);
   #endif
 
   bool setupCompleted = getSetupStatus();
   
   if (!setupCompleted) {
  
-    ntagEepromAdapter.clean();
-    delay(50);
+    while(!ntagEepromAdapter.clean()){
+       
+       #ifdef NFC_SENSE_DEBUG
+        Serial.println("erase loop");
+      #endif
+      delay(100);
+    }
+    
 
     NdefMessage message = NdefMessage();
     message.addUrlRecordTemp(KNOWN_TYPE_HTTP, "127.0.0.1/t=");
