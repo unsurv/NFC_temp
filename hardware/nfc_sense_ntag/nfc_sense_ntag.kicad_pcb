@@ -997,8 +997,9 @@
 		(descr "WSON, 6 Pin (http://www.ti.com/lit/ds/symlink/tps61040.pdf#page=35), generated with kicad-footprint-generator ipc_noLead_generator.py")
 		(tags "WSON NoLead")
 		(property "Reference" "U1"
-			(at 0 -1.95 270)
+			(at 0 -1.95 90)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "16fd5e69-61d7-4149-a9a2-e8745eed37fd")
 			(effects
 				(font
@@ -1008,7 +1009,7 @@
 			)
 		)
 		(property "Value" "TMP117AIDRVR"
-			(at 0 1.95 270)
+			(at 0 1.95 90)
 			(layer "F.Fab")
 			(uuid "ea74b350-0488-4f5e-a9ee-0df0e775d8d4")
 			(effects
@@ -1019,7 +1020,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=http%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftmp112"
-			(at 0 0 270)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "cb60d051-3784-45fc-bbb8-6d84beadbc35")
@@ -1031,7 +1032,7 @@
 			)
 		)
 		(property "Description" "SENSOR DIGITAL -40C-125C SOT563"
-			(at 0 0 270)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "618dd3a5-830c-4b98-8e60-260079331ed1")
@@ -1279,7 +1280,7 @@
 			(uuid "faf4409c-544e-47a0-bfb0-068edc5e110a")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 270)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(uuid "f1293654-fc0a-4053-8b20-68ae10b0fabd")
 			(effects
@@ -1356,7 +1357,7 @@
 			(uuid "34dd4ed9-df4e-4b88-806b-a0f43967f180")
 		)
 		(embedded_fonts no)
-		(model "${KICAD6_3DMODEL_DIR}/Package_SON.3dshapes/WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm.wrl"
+		(model "${KICAD10_3DMODEL_DIR}/Package_SON.3dshapes/WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -1611,6 +1612,7 @@
 		(property "Reference" "U4"
 			(at 0 -2.8 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7373b0dc-fec9-4964-9b07-ae2f3bc6a178")
 			(effects
 				(font
